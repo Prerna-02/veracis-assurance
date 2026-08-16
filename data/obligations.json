@@ -1,0 +1,126 @@
+{
+  "obligation_set_version": "2026.2",
+  "note": "Clause references and wording in this file are illustrative and have been written for this exercise. They are not reproductions of any regulator's published text.",
+  "obligations": [
+    {
+      "obligation_id": "OBL-001",
+      "source": "CBUAE AI Guidance Note",
+      "clause_ref": "3.1",
+      "dimension": "GOV",
+      "requirement_text": "The Board shall approve a documented framework governing the institution's use of artificial intelligence, and shall review it at least annually.",
+      "required_evidence_types": [
+        "governance_policy"
+      ]
+    },
+    {
+      "obligation_id": "OBL-002",
+      "source": "CBUAE AI Guidance Note",
+      "clause_ref": "3.4",
+      "dimension": "GOV",
+      "requirement_text": "Senior management shall designate a named individual accountable for the institution's artificial intelligence risk posture.",
+      "required_evidence_types": [
+        "raci_matrix"
+      ]
+    },
+    {
+      "obligation_id": "OBL-003",
+      "source": "CBUAE AI Guidance Note",
+      "clause_ref": "3.7",
+      "dimension": "GOV",
+      "requirement_text": "The institution shall define and document its risk appetite in respect of artificial intelligence deployment.",
+      "required_evidence_types": [
+        "risk_appetite_statement"
+      ]
+    },
+    {
+      "obligation_id": "OBL-004",
+      "source": "CBUAE AI Guidance Note",
+      "clause_ref": "4.2",
+      "dimension": "MRC",
+      "requirement_text": "The institution shall maintain a complete inventory of artificial intelligence systems in use, whether developed internally or supplied by a third party.",
+      "required_evidence_types": [
+        "system_inventory"
+      ]
+    },
+    {
+      "obligation_id": "OBL-005",
+      "source": "CBUAE AI Guidance Note",
+      "clause_ref": "4.5",
+      "dimension": "MRC",
+      "requirement_text": "Each artificial intelligence system shall be subject to a documented risk assessment prior to deployment and following material change.",
+      "required_evidence_types": [
+        "risk_assessment"
+      ]
+    },
+    {
+      "obligation_id": "OBL-006",
+      "source": "CBUAE AI Guidance Note",
+      "clause_ref": "4.9",
+      "dimension": "MRC",
+      "requirement_text": "Where an artificial intelligence system is supplied by a third party, the institution shall obtain and retain evidence of due diligence performed on that supplier.",
+      "required_evidence_types": [
+        "vendor_due_diligence"
+      ]
+    },
+    {
+      "obligation_id": "OBL-007",
+      "source": "DFSA Conduct Rulebook",
+      "clause_ref": "COB 7.3",
+      "dimension": "RCP",
+      "requirement_text": "A firm shall be able to demonstrate the basis on which any recommendation made to a client was formed, including the contribution of any automated tool.",
+      "required_evidence_types": [
+        "compliance_mapping"
+      ]
+    },
+    {
+      "obligation_id": "OBL-008",
+      "source": "CBUAE AI Guidance Note",
+      "clause_ref": "5.1",
+      "dimension": "RCP",
+      "requirement_text": "The institution shall map its artificial intelligence systems against applicable regulatory requirements and record identified gaps.",
+      "required_evidence_types": [
+        "gap_analysis"
+      ]
+    },
+    {
+      "obligation_id": "OBL-009",
+      "source": "CBUAE AI Guidance Note",
+      "clause_ref": "6.2",
+      "dimension": "OPI",
+      "requirement_text": "The institution shall establish incident management procedures that expressly address failure or malfunction of artificial intelligence systems.",
+      "required_evidence_types": [
+        "incident_procedure"
+      ]
+    },
+    {
+      "obligation_id": "OBL-010",
+      "source": "CBUAE AI Guidance Note",
+      "clause_ref": "6.6",
+      "dimension": "OPI",
+      "requirement_text": "Access to modify artificial intelligence systems operating in production shall be restricted to authorised personnel and shall be logged.",
+      "required_evidence_types": [
+        "access_control_log"
+      ]
+    },
+    {
+      "obligation_id": "OBL-011",
+      "source": "CBUAE AI Guidance Note",
+      "clause_ref": "6.8",
+      "dimension": "OPI",
+      "requirement_text": "Changes to artificial intelligence systems in production shall be subject to documented approval before release.",
+      "required_evidence_types": [
+        "change_record"
+      ]
+    },
+    {
+      "obligation_id": "OBL-012",
+      "source": "CBUAE AI Guidance Note",
+      "clause_ref": "7.4",
+      "dimension": "AEQ",
+      "requirement_text": "Evidence supporting the institution's artificial intelligence governance shall be retained, version-controlled and retrievable on request.",
+      "required_evidence_types": [
+        "retention_record"
+      ]
+    }
+  ]
+}

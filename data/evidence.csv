@@ -1,0 +1,26 @@
+evidence_id,obligation_id,evidence_type,title,source_system,evidence_date,status,owner,version,evidence_hash
+EV-0001,OBL-001,governance_policy,Group AI and Emerging Technology Policy,SharePoint,2026-03-14,APPROVED,S. Rawal,2.1,a41f9c2b
+EV-0002,OBL-002,raci_matrix,AI Lifecycle Ownership Matrix,SharePoint,2024-05-02,APPROVED,S. Rawal,1.0,7d0e11aa
+EV-0003,OBL-003,board_minutes,"Board Risk Committee minutes, Feb 2026",Board portal,2026-02-20,APPROVED,Company Secretary,1.0,c9b30f57
+EV-0004,OBL-004,system_inventory,AI Systems Register (IT-maintained),IT asset register,2026-07-11,APPROVED,N. Mehra,4.3,1b8ec440
+EV-0005,OBL-004,system_inventory,AI Systems Register (Compliance copy),SharePoint,2025-11-02,APPROVED,S. Rawal,3.0,55aa9021
+EV-0006,OBL-005,risk_assessment,Pre-deployment assessment: Portfolio Rebalance Suggester,SharePoint,2026-06-01,DRAFT,A. Iqbal,0.4,3f77b1c0
+EV-0007,OBL-005,risk_assessment,Pre-deployment assessment: KYC Document Reader,SharePoint,2026-09-30,APPROVED,A. Iqbal,1.0,8c21de93
+EV-0008,OBL-006,vendor_due_diligence,Vendor DD pack: Northwind Analytics,Procurement,2026-01-19,APPROVED,Procurement,1.2,2ed7ff10
+EV-0009,OBL-006,vendor_due_diligence,Vendor DD pack: Cedar OCR Services,Procurement,2023-08-30,APPROVED,Procurement,1.0,9a04c7be
+EV-0010,OBL-007,compliance_mapping,Advice process control mapping (DIFC entity),Compliance register,2026-04-08,APPROVED,S. Rawal,2.0,6b1d0e44
+EV-0011,OBL-008,gap_analysis,AI regulatory gap analysis v1,Compliance register,2026-05-22,DRAFT,S. Rawal,1.0,0cc48a17
+EV-0012,OBL-008,gap_analysis,AI regulatory gap analysis v1,Compliance register,2026-05-22,APPROVED,S. Rawal,1.0,0cc48a17
+EV-0013,OBL-009,incident_procedure,Group Incident Management Procedure,ServiceDesk,2025-10-05,APPROVED,N. Mehra,3.1,44f0b9c2
+EV-0014,OBL-010,access_control_log,"Production access review, Q2 2026",IAM,2026-06-30,APPROVED,N. Mehra,1.0,d2b7e015
+EV-0015,OBL-011,change_record,Change approval: Lead Score Engine v3 release,Email,2026-02-11,APPROVED,Head of Distribution,1.0,e71c3a08
+EV-0016,OBL-011,change_record,Change approval: Meridian Chat content update,ServiceDesk,2026-07-02,APPROVED,N. Mehra,1.0,b0937fc5
+EV-0017,OBL-012,retention_record,Document retention schedule,SharePoint,2022-12-01,APPROVED,Company Secretary,1.0,fa2e8801
+EV-0018,OBL-014,risk_assessment,Pre-deployment assessment: ClaimSort,SharePoint,2026-03-03,APPROVED,A. Iqbal,1.0,77b2c419
+EV-0019,OBL-015,vendor_due_diligence,Vendor DD pack: Helios Carrier Platform,Procurement,2026-02-14,APPROVED,Procurement,1.0,31de70ab
+EV-0014,OBL-010,access_control_log,"Production access review, Q1 2026",IAM,2026-03-31,APPROVED,N. Mehra,1.0,aa19c73d
+EV-0020,OBL-001,governance_policy,Group AI and Emerging Technology Policy,SharePoint,2025-01-09,SUPERSEDED,S. Rawal,1.0,5e6a2211
+EV-0021,OBL-009,incident_procedure,AI incident annex (draft),SharePoint,2026-07-25,DRAFT,N. Mehra,0.2,cd8801f4
+EV-0022,OBL-002,raci_matrix,AI Lifecycle Ownership Matrix,SharePoint,,APPROVED,S. Rawal,1.1,6f21b90c
+EV-0023,OBL-012,retention_record,Evidence retention and retrieval test report,AuditBoard,2026-06-17,APPROVED,Internal Audit,1.0,19ba4e77
+EV-0024,OBL-007,compliance_mapping,Advice process control mapping (onshore entity),Compliance register,2026-04-08,APPROVED,S. Rawal,2.0,6b1d0e44

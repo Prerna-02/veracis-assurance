@@ -1,0 +1,1 @@
+-- Operational integrity query.

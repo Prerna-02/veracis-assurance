@@ -1,0 +1,47 @@
+{
+  "methodology_version": "1.0.0",
+  "effective_from": "2026-01-01",
+  "dimensions": {
+    "GOV": {
+      "name": "Governance Structure",
+      "weight": 0.25
+    },
+    "MRC": {
+      "name": "Model and Tool Risk Controls",
+      "weight": 0.25
+    },
+    "RCP": {
+      "name": "Regulatory Compliance Posture",
+      "weight": 0.2
+    },
+    "OPI": {
+      "name": "Operational Integrity",
+      "weight": 0.2
+    },
+    "AEQ": {
+      "name": "Assurance Evidence Quality",
+      "weight": 0.1
+    }
+  },
+  "evidence_rules": {
+    "staleness_threshold_days": 365,
+    "as_at_date": "2026-08-01",
+    "evidence_must_match_required_type": true,
+    "approved_status_values": [
+      "APPROVED",
+      "DRAFT",
+      "SUPERSEDED"
+    ]
+  },
+  "obligation_status_rules": {
+    "MET": "At least one non-stale, type-matching evidence record with status APPROVED",
+    "PARTIAL": "Evidence present but stale, DRAFT, or type-mismatched",
+    "NOT_MET": "No usable evidence record"
+  },
+  "dimension_status_bands": {
+    "GREEN": "80.0 and above",
+    "AMBER": "50.0 up to but not including 80.0",
+    "RED": "below 50.0"
+  },
+  "dimension_score_definition": "Percentage of obligations in the dimension that are MET, with PARTIAL counting as one half."
+}

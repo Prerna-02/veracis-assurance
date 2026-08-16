@@ -1,0 +1,107 @@
+{
+  "export_meta": {
+    "system": "Meridian ServiceDesk",
+    "export_generated": "2026-08-01T09:14:22Z",
+    "record_count": 7
+  },
+  "tickets": [
+    {
+      "ticket_ref": "SD-88214",
+      "category": "Change Approval",
+      "summary": "Change approval: Lead Score Engine v3 release",
+      "linked_control": "OBL-011",
+      "artefact": {
+        "kind": "change_record",
+        "revision": "1.0",
+        "checksum": "e71c3a08"
+      },
+      "raised_by": "Head of Distribution",
+      "closed_at": "2026-02-11T14:02:00Z",
+      "state": "Closed - Approved"
+    },
+    {
+      "ticket_ref": "SD-91077",
+      "category": "Change Approval",
+      "summary": "Change approval: Meridian Chat content update",
+      "linked_control": "OBL-011",
+      "artefact": {
+        "kind": "change_record",
+        "revision": "1.0",
+        "checksum": "b0937fc5"
+      },
+      "raised_by": "N. Mehra",
+      "closed_at": "2026-07-02T08:31:00Z",
+      "state": "Closed - Approved"
+    },
+    {
+      "ticket_ref": "SD-90455",
+      "category": "Procedure",
+      "summary": "AI incident annex (draft)",
+      "linked_control": "OBL-009",
+      "artefact": {
+        "kind": "incident_procedure",
+        "revision": "0.2",
+        "checksum": "cd8801f4"
+      },
+      "raised_by": "N. Mehra",
+      "closed_at": "2026-07-25T11:45:00Z",
+      "state": "Open - In Draft"
+    },
+    {
+      "ticket_ref": "SD-86300",
+      "category": "Change Approval",
+      "summary": "Emergency change: KYC Document Reader field mapping",
+      "linked_control": "OBL-011",
+      "artefact": {
+        "kind": "change_record",
+        "revision": "1.0",
+        "checksum": "40ca7b12"
+      },
+      "raised_by": "Operations",
+      "closed_at": "2025-12-19T17:20:00Z",
+      "state": "Closed - Approved Retrospectively"
+    },
+    {
+      "ticket_ref": "SD-92310",
+      "category": "Access Review",
+      "summary": "Production access review, Q2 2026",
+      "linked_control": "OBL-010",
+      "artefact": {
+        "kind": "access_control_log",
+        "revision": "1.0",
+        "checksum": "d2b7e015"
+      },
+      "raised_by": "N. Mehra",
+      "closed_at": "2026-06-30T16:00:00Z",
+      "state": "Closed - Approved"
+    },
+    {
+      "ticket_ref": "SD-89004",
+      "category": "Procedure",
+      "summary": "Group Incident Management Procedure - annual review",
+      "linked_control": "OBL-009",
+      "artefact": {
+        "kind": "incident_procedure",
+        "revision": "3.1",
+        "checksum": "44f0b9c2"
+      },
+      "raised_by": "N. Mehra",
+      "closed_at": null,
+      "state": "Open - Awaiting Sign-off"
+    },
+    {
+      "ticket_ref": "SD-93118",
+      "category": "Change Approval",
+      "summary": "Change approval: Portfolio Rebalance Suggester vendor upgrade",
+      "linked_control": "OBL-005",
+      "artefact": {
+        "kind": "change_record",
+        "revision": "1.0",
+        "checksum": "77e0aa31"
+      },
+      "raised_by": "Head of Investments",
+      "closed_at": "2026-07-28T10:05:00Z",
+      "state": "Closed - Approved"
+    }
+  ]
+}

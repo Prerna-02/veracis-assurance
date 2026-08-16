@@ -1,0 +1,20 @@
+.venv/
+
+# Python cache
+__pycache__/
+*.py[cod]
+
+# Test/cache files
+.pytest_cache/
+
+# VS Code local settings
+.vscode/
+
+# Local database
+*.db
+*.sqlite
+*.sqlite3
+
+# OS files
+.DS_Store
+Thumbs.db

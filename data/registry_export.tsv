@@ -1,0 +1,12 @@
+asset_ref	control_ref	doc_class	doc_title	captured_on	approval_state	accountable_person	rev	digest
+AST-001	OBL-004	system_inventory	AI Systems Register (IT-maintained)	11/07/2026	Approved	N. Mehra	4.3	1b8ec440
+AST-002	OBL-005	risk_assessment	Pre-deployment assessment: Portfolio Rebalance Suggester	01/06/2026	Draft	A. Iqbal	0.4	3f77b1c0
+AST-003	OBL-005	risk_assessment	Pre-deployment assessment: Lead Score Engine	-	Approved	A. Iqbal	1.0	b4429e70
+AST-004	OBL-006	vendor_due_diligence	Vendor DD pack: Northwind Analytics	19/01/2026	Approved	Procurement	1.2	2ed7ff10
+AST-005	OBL-006	vendor_due_diligence	Vendor DD pack: Meridian Chat supplier	03/04/2026	Approved	Procurement	1.0	c1180fd5
+AST-006	OBL-004	system_inventory	Shadow AI discovery scan - Q2 2026	30/06/2026	Approved	N. Mehra	1.0	72ff3d19
+AST-007	OBL-010	access_control_log	Production access review, Q1 2026	31/03/2026	Approved	N. Mehra	1.0	aa19c73d
+AST-008	OBL-003	risk_appetite_statement	AI risk appetite - proposed wording	14/07/2026	Draft	S. Rawal	0.3	9911ce40
+AST-009	OBL-012	retention_record	Evidence retention and retrieval test report	17/06/2026	Approved	Internal Audit	1.0	19ba4e77
+AST-010	OBL-002	raci_matrix	AI Lifecycle Ownership Matrix	02/05/2024	Approved	S. Rawal	1.0	7d0e11aa
+# Export produced by Meridian Asset Registry v2.4 on 01/08/2026. Blank values are recorded as a hyphen.
