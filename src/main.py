@@ -6,6 +6,8 @@ from ingest import (
     load_source_notes,
 )
 
+from normalize import normalize_all_evidence
+
 
 def count_missing(records):
     """Count blank values for each field in a list of records."""
@@ -64,6 +66,12 @@ def main():
     # ---------------------------
 
     source_notes = load_source_notes("source_notes.md")
+
+    canonical_evidence = normalize_all_evidence(
+        evidence,
+        registry,
+        servicedesk,
+    )
 
     print("\n========== VERACIS SOURCE PROFILE ==========\n")
 
@@ -177,7 +185,63 @@ def main():
     print("--------------------------------------------")
     print("Source notes loaded:", bool(source_notes.strip()))
 
-    print("\n============================================")
+    print("\nCANONICAL EVIDENCE")
+    print("--------------------------------------------")
+
+    print(
+        "Total canonical observations:",
+        len(canonical_evidence)
+    )
+
+    source_counts = {}
+
+    for record in canonical_evidence:
+        source_counts[record.source_dataset] = (
+            source_counts.get(
+                record.source_dataset,
+                0
+            ) + 1
+        )
+
+    print(
+        "Observations by source:",
+        source_counts
+    )
+
+    unknown_status_count = sum(
+        1
+        for record in canonical_evidence
+        if record.normalized_status == "UNKNOWN"
+    )
+
+    print(
+        "Unknown normalized statuses:",
+        unknown_status_count
+    )
+
+    missing_date_records = [
+        record
+        for record in canonical_evidence
+        if record.event_date is None
+    ]
+
+    print(
+        "Observations with missing event date:",
+        len(missing_date_records)
+    )
+
+    print("\nRecords with missing event dates:")
+
+    for record in missing_date_records:
+        print(
+            record.observation_id,
+            "|",
+            record.source_record_id,
+            "|",
+            record.source_dataset,
+            "| date basis:",
+            record.date_basis,
+        )
 
 
 if __name__ == "__main__":
