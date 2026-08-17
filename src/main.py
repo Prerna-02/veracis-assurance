@@ -6,6 +6,7 @@ from ingest import (
     load_source_notes,
 )
 from reconcile import reconcile_evidence
+from score import score_dimensions
 from validate import validate_evidence
 from normalize import normalize_all_evidence
 
@@ -264,6 +265,11 @@ def main():
         reconciliation_groups,
     )
 
+    dimension_assessments = score_dimensions(
+        obligation_assessments,
+        methodology,
+    )
+
     print("\nDATA QUALITY ISSUES")
     print("--------------------------------------------")
 
@@ -502,6 +508,65 @@ def main():
                 "  Reasons:",
                 " | ".join(evaluation.reasons)
             )
+
+    print("\nDIMENSION ASSESSMENT")
+    print("--------------------------------------------")
+
+    print(
+        "Total dimensions assessed:",
+        len(dimension_assessments)
+    )
+
+    print(
+        "Dimensions requiring review:",
+        sum(
+            1
+            for assessment in dimension_assessments
+            if assessment.review_required is True
+        )
+    )
+
+    dimension_status_counts = {
+        "GREEN": 0,
+        "AMBER": 0,
+        "RED": 0,
+    }
+
+    for assessment in dimension_assessments:
+        dimension_status_counts[assessment.dimension_status] = (
+            dimension_status_counts[assessment.dimension_status] + 1
+        )
+
+    print(
+        "Dimension status counts:",
+        dimension_status_counts
+    )
+
+    print("\nDimension assessment register:")
+
+    for assessment in dimension_assessments:
+        print("\nDimension:", assessment.dimension_code)
+        print("Name:", assessment.dimension_name)
+        print("Weight:", assessment.weight)
+        print("Score:", assessment.score)
+        print("Dimension status:", assessment.dimension_status)
+        print("Review required:", assessment.review_required)
+        print("Obligations:")
+
+        for contribution in assessment.obligation_contributions:
+            print(
+                " ",
+                contribution.obligation_id,
+                contribution.obligation_status,
+                "->",
+                contribution.contribution,
+            )
+
+        print("Calculation:")
+        print("  Earned points:", assessment.earned_points)
+        print("  Maximum points:", assessment.maximum_points)
+        print("  Score:", assessment.score)
+        print("Reason:", assessment.reason)
 
 
 if __name__ == "__main__":
