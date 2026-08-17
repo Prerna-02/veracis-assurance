@@ -1,4 +1,4 @@
-
+from assess import assess_obligations
 from ingest import (
     load_json,
     load_csv,
@@ -256,6 +256,14 @@ def main():
         canonical_evidence
     )
 
+    obligation_assessments = assess_obligations(
+        canonical_evidence,
+        obligations_data,
+        methodology,
+        quality_issues,
+        reconciliation_groups,
+    )
+
     print("\nDATA QUALITY ISSUES")
     print("--------------------------------------------")
 
@@ -402,6 +410,98 @@ def main():
             group.assessment_handling
         )
         print("Reason:", group.message)
+
+    print("\nOBLIGATION ASSESSMENT")
+    print("--------------------------------------------")
+
+    print(
+        "Total obligations assessed:",
+        len(obligation_assessments)
+    )
+
+    status_counts = {
+        "MET": 0,
+        "PARTIAL": 0,
+        "NOT_MET": 0,
+    }
+
+    for assessment in obligation_assessments:
+        status_counts[assessment.status] = (
+            status_counts[assessment.status] + 1
+        )
+
+    print("Status counts:", status_counts)
+
+    print(
+        "Obligations requiring review:",
+        sum(
+            1
+            for assessment in obligation_assessments
+            if assessment.review_required is True
+        )
+    )
+
+    print("\nObligation assessment register:")
+
+    for assessment in obligation_assessments:
+        print("\nObligation:", assessment.obligation_id)
+        print("Dimension:", assessment.dimension)
+        print("Status:", assessment.status)
+        print("Review required:", assessment.review_required)
+        print("Reason:", assessment.reason)
+        print(
+            "Evidence units evaluated:",
+            len(assessment.evidence_evaluations)
+        )
+
+        for evaluation in assessment.evidence_evaluations:
+            print("\n  Unit ID:", evaluation.assessment_unit_id)
+            print(
+                "  Source record IDs:",
+                ", ".join(evaluation.source_record_ids)
+                or "(none)"
+            )
+            print(
+                "  Sources:",
+                ", ".join(evaluation.source_datasets)
+                or "(none)"
+            )
+            print("  Digest:", evaluation.digest or "(none)")
+            print(
+                "  Evidence types:",
+                ", ".join(evaluation.evidence_types)
+                or "(none)"
+            )
+            print(
+                "  Statuses:",
+                ", ".join(evaluation.normalized_statuses)
+                or "(none)"
+            )
+            print(
+                "  Event dates:",
+                ", ".join(evaluation.event_dates)
+                or "(none)"
+            )
+            print("  Date state:", evaluation.date_state)
+            print("  Type matches:", evaluation.type_matches)
+            print(
+                "  Reconciliation type:",
+                evaluation.reconciliation_type or "(none)"
+            )
+            print(
+                "  Qualifies for MET:",
+                evaluation.qualifies_for_met
+            )
+            print(
+                "  Supports PARTIAL:",
+                evaluation.supports_partial
+            )
+            print("  Decision basis:", evaluation.decision_basis)
+            print("  Review required:", evaluation.review_required)
+            print(
+                "  Reasons:",
+                " | ".join(evaluation.reasons)
+            )
 
 
 if __name__ == "__main__":
