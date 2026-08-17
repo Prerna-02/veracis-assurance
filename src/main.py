@@ -1,4 +1,15 @@
+from pathlib import Path
+from itertools import groupby
+
 from assess import assess_obligations
+from database import (
+    build_provisional_run_id,
+    connect_database,
+    get_database_counts,
+    load_traceability_database,
+    run_model_risk_controls_query,
+    run_operational_integrity_query,
+)
 from ingest import (
     load_json,
     load_csv,
@@ -41,6 +52,166 @@ def unique_values(records, field):
             if record.get(field) not in (None, "", "-")
         }
     )
+
+
+def format_dimension_traceability(rows):
+    """Format row-level SQL lineage as a deterministic audit hierarchy."""
+
+    if not rows:
+        return "No traceability rows found."
+
+    def value(row, field):
+        item = row[field]
+        return "none" if item in (None, "") else str(item)
+
+    def boolean(row, field):
+        item = row[field]
+        return "none" if item is None else str(bool(item))
+
+    ordered_rows = sorted(
+        rows,
+        key=lambda row: (
+            value(row, "dimension_code"),
+            value(row, "obligation_id"),
+            value(row, "assessment_unit_id"),
+            value(row, "source_dataset"),
+            value(row, "observation_id"),
+            value(row, "issue_type"),
+            value(row, "issue_message"),
+        ),
+    )
+    lines = []
+
+    for _, dimension_group in groupby(
+        ordered_rows,
+        key=lambda row: row["dimension_code"],
+    ):
+        dimension_rows = list(dimension_group)
+        dimension = dimension_rows[0]
+        lines.extend(
+            [
+                f'{value(dimension, "dimension_name").upper()} AUDIT',
+                "--------------------------------------------",
+                "",
+                f'Dimension: {value(dimension, "dimension_code")}',
+                f'Name: {value(dimension, "dimension_name")}',
+                f'Score: {value(dimension, "dimension_score")}',
+                f'Status: {value(dimension, "dimension_status")}',
+                "Review required: "
+                f'{boolean(dimension, "dimension_review_required")}',
+            ]
+        )
+
+        for _, obligation_group in groupby(
+            dimension_rows,
+            key=lambda row: row["obligation_id"],
+        ):
+            obligation_rows = list(obligation_group)
+            obligation = obligation_rows[0]
+            lines.extend(
+                [
+                    "",
+                    f'Obligation: {value(obligation, "obligation_id")}',
+                    f'Status: {value(obligation, "obligation_status")}',
+                    "Review required: "
+                    f'{boolean(obligation, "obligation_review_required")}',
+                    f'Reason: {value(obligation, "obligation_reason")}',
+                ]
+            )
+
+            for _, unit_group in groupby(
+                obligation_rows,
+                key=lambda row: row["assessment_unit_id"],
+            ):
+                unit_rows = list(unit_group)
+                unit = unit_rows[0]
+                lines.extend(
+                    [
+                        "",
+                        "  Assessment unit: "
+                        f'{value(unit, "assessment_unit_id")}',
+                        f'  Digest: {value(unit, "evaluation_digest")}',
+                        "  Reconciliation type: "
+                        f'{value(unit, "reconciliation_type")}',
+                        f'  Date state: {value(unit, "date_state")}',
+                        f'  Status state: {value(unit, "status_state")}',
+                        "  Type matches: "
+                        f'{boolean(unit, "type_matches")}',
+                        "  Qualifies for MET: "
+                        f'{boolean(unit, "qualifies_for_met")}',
+                        "  Supports PARTIAL: "
+                        f'{boolean(unit, "supports_partial")}',
+                        "  Decision basis: "
+                        f'{value(unit, "decision_basis")}',
+                        "  Review required: "
+                        f'{boolean(unit, "evaluation_review_required")}',
+                        "",
+                        "  Source observations:",
+                    ]
+                )
+
+                observation_groups = groupby(
+                    unit_rows,
+                    key=lambda row: (
+                        row["source_dataset"],
+                        row["observation_id"],
+                    ),
+                )
+
+                for _, observation_group in observation_groups:
+                    observation_rows = list(observation_group)
+                    observation = observation_rows[0]
+
+                    if observation["observation_id"] is None:
+                        lines.append("    none")
+                        continue
+
+                    lines.extend(
+                        [
+                            "    "
+                            f'{value(observation, "source_record_id")} | '
+                            f'{value(observation, "source_dataset")} | '
+                            f'{value(observation, "normalized_status")}',
+                            "      Observation ID: "
+                            f'{value(observation, "observation_id")}',
+                            "      Evidence type: "
+                            f'{value(observation, "evidence_type")}',
+                            f'      Date: {value(observation, "event_date")}',
+                        ]
+                    )
+
+                    issues = []
+                    seen_issues = set()
+
+                    for issue_row in observation_rows:
+                        if issue_row["issue_type"] is None:
+                            continue
+
+                        issue = (
+                            issue_row["issue_type"],
+                            issue_row["issue_message"],
+                            issue_row["severity"],
+                            issue_row["assessment_action"],
+                        )
+
+                        if issue not in seen_issues:
+                            seen_issues.add(issue)
+                            issues.append(issue)
+
+                    if not issues:
+                        lines.append("      Issue: none")
+                    else:
+                        for issue_type, message, severity, action in issues:
+                            lines.extend(
+                                [
+                                    f"      Issue: {issue_type}",
+                                    f"      Reason: {message}",
+                                    f"      Severity: {severity}",
+                                    f"      Assessment action: {action}",
+                                ]
+                            )
+
+    return "\n".join(lines)
 
 
 def main():
@@ -269,6 +440,36 @@ def main():
         obligation_assessments,
         methodology,
     )
+
+    run_id = build_provisional_run_id(
+        obligations_data,
+        methodology,
+    )
+    project_root = Path(__file__).resolve().parent.parent
+    database_path = load_traceability_database(
+        db_path=project_root / "output" / "veracis_traceability.db",
+        run_id=run_id,
+        obligations_data=obligations_data,
+        methodology=methodology,
+        canonical_records=canonical_evidence,
+        quality_issues=quality_issues,
+        reconciliation_groups=reconciliation_groups,
+        obligation_assessments=obligation_assessments,
+        dimension_assessments=dimension_assessments,
+    )
+
+    database_connection = connect_database(database_path)
+
+    try:
+        database_counts = get_database_counts(database_connection)
+        operational_integrity_rows = (
+            run_operational_integrity_query(database_connection)
+        )
+        model_risk_controls_rows = (
+            run_model_risk_controls_query(database_connection)
+        )
+    finally:
+        database_connection.close()
 
     print("\nDATA QUALITY ISSUES")
     print("--------------------------------------------")
@@ -567,6 +768,54 @@ def main():
         print("  Maximum points:", assessment.maximum_points)
         print("  Score:", assessment.score)
         print("Reason:", assessment.reason)
+
+    print("\nSQL TRACEABILITY")
+    print("--------------------------------------------")
+    print("Database path:", database_path)
+    print("Assessment run ID:", run_id)
+    print(
+        "Assessment runs stored:",
+        database_counts["assessment_runs"]
+    )
+    print(
+        "Obligations stored:",
+        database_counts["obligations"]
+    )
+    print(
+        "Evidence observations stored:",
+        database_counts["evidence_observations"]
+    )
+    print(
+        "Data-quality issues stored:",
+        database_counts["data_quality_issues"]
+    )
+    print(
+        "Reconciliation groups stored:",
+        database_counts["reconciliation_groups"]
+    )
+    print(
+        "Obligation results stored:",
+        database_counts["obligation_results"]
+    )
+    print(
+        "Dimension results stored:",
+        database_counts["dimension_results"]
+    )
+    print(
+        "Operational Integrity source-level audit rows:",
+        len(operational_integrity_rows)
+    )
+    print(
+        "Model and Tool Risk Controls source-level audit rows:",
+        len(model_risk_controls_rows)
+    )
+
+    print("\n" + format_dimension_traceability(
+        operational_integrity_rows
+    ))
+    print("\n" + format_dimension_traceability(
+        model_risk_controls_rows
+    ))
 
 
 if __name__ == "__main__":

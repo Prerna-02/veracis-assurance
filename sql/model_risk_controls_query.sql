@@ -51,7 +51,7 @@ SELECT
 FROM selected_run AS sr
 JOIN dimension_results AS dr
     ON dr.run_id = sr.run_id
-    AND dr.dimension_code = 'OPI'
+    AND dr.dimension_code = 'MRC'
 JOIN obligation_results AS obr
     ON obr.run_id = dr.run_id
     AND obr.dimension_code = dr.dimension_code
