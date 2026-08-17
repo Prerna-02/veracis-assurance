@@ -1,12 +1,13 @@
-"""Veracis Assurance application entry point."""
+
 from ingest import (
     load_json,
     load_csv,
     load_registry_tsv,
     load_source_notes,
 )
-
+from validate import validate_evidence
 from normalize import normalize_all_evidence
+
 
 
 def count_missing(records):
@@ -241,6 +242,90 @@ def main():
             record.source_dataset,
             "| date basis:",
             record.date_basis,
+        )
+
+
+    quality_issues = validate_evidence(
+        canonical_evidence,
+        obligations_data,
+        methodology,
+    )
+
+    print("\nDATA QUALITY ISSUES")
+    print("--------------------------------------------")
+
+    print(
+        "Total issues:",
+        len(quality_issues)
+    )
+
+    issue_type_counts = {}
+
+    for issue in quality_issues:
+        issue_type_counts[issue.issue_type] = (
+            issue_type_counts.get(
+                issue.issue_type,
+                0
+            ) + 1
+        )
+
+    print(
+        "Issues by type:",
+        issue_type_counts
+    )
+
+    assessment_action_counts = {
+        "KEEP_FOR_ASSESSMENT": 0,
+        "REVIEW_BEFORE_ASSESSMENT": 0,
+        "EXCLUDE_FROM_ASSESSMENT": 0,
+    }
+
+    for issue in quality_issues:
+        assessment_action_counts[issue.assessment_action] = (
+            assessment_action_counts[issue.assessment_action] + 1
+        )
+
+    print(
+        "Assessment actions:",
+        assessment_action_counts
+    )
+
+    print(
+        "Records requiring review:",
+        sum(
+            1
+            for issue in quality_issues
+            if issue.review_required is True
+        )
+    )
+
+
+    print("\nDefect register:")
+
+    for issue in quality_issues:
+
+        print(
+            "\n",
+            issue.source_record_id,
+            "|",
+            issue.issue_type,
+            "|",
+            issue.severity,
+        )
+
+        print(
+            " Reason:",
+            issue.message
+        )
+
+        print(
+            " Review required:",
+            issue.review_required
+        )
+
+        print(
+            " Assessment action:",
+            issue.assessment_action
         )
 
 
