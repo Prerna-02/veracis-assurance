@@ -5,6 +5,7 @@ from ingest import (
     load_registry_tsv,
     load_source_notes,
 )
+from reconcile import reconcile_evidence
 from validate import validate_evidence
 from normalize import normalize_all_evidence
 
@@ -251,6 +252,10 @@ def main():
         methodology,
     )
 
+    reconciliation_groups = reconcile_evidence(
+        canonical_evidence
+    )
+
     print("\nDATA QUALITY ISSUES")
     print("--------------------------------------------")
 
@@ -327,6 +332,76 @@ def main():
             " Assessment action:",
             issue.assessment_action
         )
+
+    print("\nRECONCILIATION")
+    print("--------------------------------------------")
+
+    print(
+        "Repeated-digest groups:",
+        len(reconciliation_groups)
+    )
+
+    print(
+        "Groups requiring review:",
+        sum(
+            1
+            for group in reconciliation_groups
+            if group.review_required is True
+        )
+    )
+
+    group_type_counts = {}
+
+    for group in reconciliation_groups:
+        group_type_counts[group.group_type] = (
+            group_type_counts.get(group.group_type, 0) + 1
+        )
+
+    print(
+        "Groups by type:",
+        dict(sorted(group_type_counts.items()))
+    )
+
+    print("\nReconciliation register:")
+
+    for group in reconciliation_groups:
+        print("\nGroup ID:", group.group_id)
+        print("Digest:", group.digest)
+        print("Group type:", group.group_type)
+        print(
+            "Sources:",
+            ", ".join(group.source_datasets) or "(none)"
+        )
+        print(
+            "Source record IDs:",
+            ", ".join(group.source_record_ids) or "(none)"
+        )
+        print(
+            "Obligations:",
+            ", ".join(group.obligation_ids) or "(none)"
+        )
+        print(
+            "Evidence types:",
+            ", ".join(group.evidence_types) or "(none)"
+        )
+        print(
+            "Statuses:",
+            ", ".join(group.normalized_statuses) or "(none)"
+        )
+        print(
+            "Titles:",
+            " | ".join(group.titles) or "(none)"
+        )
+        print(
+            "Versions:",
+            ", ".join(group.versions) or "(none)"
+        )
+        print("Review required:", group.review_required)
+        print(
+            "Assessment handling:",
+            group.assessment_handling
+        )
+        print("Reason:", group.message)
 
 
 if __name__ == "__main__":
