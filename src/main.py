@@ -17,6 +17,12 @@ from ingest import (
     load_source_notes,
 )
 from reconcile import reconcile_evidence
+from report import (
+    build_assessment_report,
+    serialize_report,
+    sha256_bytes,
+    write_assessment_report,
+)
 from score import score_dimensions
 from validate import validate_evidence
 from normalize import normalize_all_evidence
@@ -250,7 +256,6 @@ def main():
     print("\n========== VERACIS SOURCE PROFILE ==========\n")
 
     print("OBLIGATIONS")
-    print("--------------------------------------------")
     print(
         "Obligation set version:",
         obligations_data["obligation_set_version"]
@@ -270,7 +275,6 @@ def main():
     print("Dimensions:", obligation_dimensions)
 
     print("\nMETHODOLOGY")
-    print("--------------------------------------------")
     print(
         "Methodology version:",
         methodology["methodology_version"]
@@ -286,14 +290,12 @@ def main():
     )
 
     print("\nEVIDENCE CSV")
-    print("--------------------------------------------")
     print("Record count:", len(evidence))
     print("Columns:", list(evidence[0].keys()))
     print("Statuses:", unique_values(evidence, "status"))
     print("Missing values:", count_missing(evidence))
 
     print("\nREGISTRY TSV")
-    print("--------------------------------------------")
     print("Record count:", len(registry))
     print("Columns:", list(registry[0].keys()))
     print(
@@ -304,7 +306,6 @@ def main():
     print("Preserved comments:", registry_comments)
 
     print("\nSERVICEDESK JSON")
-    print("--------------------------------------------")
 
     tickets = servicedesk["tickets"]
 
@@ -356,12 +357,9 @@ def main():
     )
 
     print("\nSOURCE NOTES")
-    print("--------------------------------------------")
     print("Source notes loaded:", bool(source_notes.strip()))
 
     print("\nCANONICAL EVIDENCE")
-    print("--------------------------------------------")
-
     print(
         "Total canonical observations:",
         len(canonical_evidence)
@@ -471,8 +469,36 @@ def main():
     finally:
         database_connection.close()
 
+    report_arguments = {
+        "obligations_data": obligations_data,
+        "methodology": methodology,
+        "canonical_records": canonical_evidence,
+        "quality_issues": quality_issues,
+        "reconciliation_groups": reconciliation_groups,
+        "obligation_assessments": obligation_assessments,
+        "dimension_assessments": dimension_assessments,
+    }
+    report_a = build_assessment_report(**report_arguments)
+    report_bytes_a = serialize_report(report_a)
+    report_bytes_b = serialize_report(
+        build_assessment_report(**report_arguments)
+    )
+    report_hash_a = sha256_bytes(report_bytes_a)
+    report_hash_b = sha256_bytes(report_bytes_b)
+    reports_are_identical = (
+        report_bytes_a == report_bytes_b
+        and report_hash_a == report_hash_b
+    )
+
+    if not reports_are_identical:
+        raise RuntimeError(
+            "Repeated assessment serialization was not byte-identical."
+        )
+
+    report_output_path = project_root / "output" / "assessment.json"
+    write_assessment_report(report_a, report_output_path)
+
     print("\nDATA QUALITY ISSUES")
-    print("--------------------------------------------")
 
     print(
         "Total issues:",
@@ -549,7 +575,7 @@ def main():
         )
 
     print("\nRECONCILIATION")
-    print("--------------------------------------------")
+   
 
     print(
         "Repeated-digest groups:",
@@ -619,7 +645,6 @@ def main():
         print("Reason:", group.message)
 
     print("\nOBLIGATION ASSESSMENT")
-    print("--------------------------------------------")
 
     print(
         "Total obligations assessed:",
@@ -711,7 +736,6 @@ def main():
             )
 
     print("\nDIMENSION ASSESSMENT")
-    print("--------------------------------------------")
 
     print(
         "Total dimensions assessed:",
@@ -816,6 +840,14 @@ def main():
     print("\n" + format_dimension_traceability(
         model_risk_controls_rows
     ))
+
+    print("\nDETERMINISTIC OUTPUT")
+    print("Output path: output/assessment.json")
+    print("Output bytes:", len(report_bytes_a))
+    print("SHA-256:", report_hash_a)
+    print("Second serialization SHA-256:", report_hash_b)
+    print("Byte-identical repeat:", reports_are_identical)
+
 
 
 if __name__ == "__main__":
