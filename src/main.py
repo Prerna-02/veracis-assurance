@@ -25,6 +25,12 @@ from report import (
 )
 from score import score_dimensions
 from validate import validate_evidence
+from versioning import (
+    INPUT_FILENAMES,
+    build_manifest,
+    sha256_file,
+    write_run_snapshot,
+)
 from normalize import normalize_all_evidence
 
 
@@ -498,6 +504,25 @@ def main():
     report_output_path = project_root / "output" / "assessment.json"
     write_assessment_report(report_a, report_output_path)
 
+    input_files = [
+        {
+            "name": filename,
+            "sha256": sha256_file(project_root / "data" / filename),
+        }
+        for filename in INPUT_FILENAMES
+    ]
+    manifest = build_manifest(
+        input_files,
+        obligations_data,
+        methodology,
+        report_hash_a,
+    )
+    snapshot_paths = write_run_snapshot(
+        project_root / "output",
+        report_bytes_a,
+        manifest,
+    )
+
     print("\nDATA QUALITY ISSUES")
 
     print(
@@ -847,6 +872,25 @@ def main():
     print("SHA-256:", report_hash_a)
     print("Second serialization SHA-256:", report_hash_b)
     print("Byte-identical repeat:", reports_are_identical)
+
+    print("\nVERSIONING & REPRODUCIBILITY")
+    print("--------------------------------------------")
+    print("Run ID:", manifest["run_id"])
+    print("Engine version:", manifest["engine_version"])
+    print("Methodology version:", manifest["methodology_version"])
+    print("Staleness threshold:", manifest["staleness_threshold_days"])
+    print("Evidence SHA-256:", manifest["evidence_sha256"])
+    print("Methodology SHA-256:", manifest["methodology_sha256"])
+    print("Obligations SHA-256:", manifest["obligations_sha256"])
+    print("Assessment SHA-256:", manifest["assessment_sha256"])
+    print(
+        "Historical report:",
+        snapshot_paths["historical_report"].relative_to(project_root),
+    )
+    print(
+        "Manifest:",
+        snapshot_paths["manifest"].relative_to(project_root),
+    )
 
 
 

@@ -1,0 +1,38 @@
+{
+  "as_at_date": "2026-08-01",
+  "assessment_sha256": "698d261691d3c5ed3549d73df88106e189fd58e5ff11ed21bed44840ca147e56",
+  "engine_version": "1.0.0",
+  "evidence_sha256": "70b7091d28be58215c5d34d238b381c5f84cdd5d0294dd47b1624e70e0580cf1",
+  "input_files": [
+    {
+      "name": "evidence.csv",
+      "sha256": "6902b1dcc93e5c0d24a6ca9ed56f04c220a50db2ef88ace0a8a7bd0a3bda1da0"
+    },
+    {
+      "name": "methodology.json",
+      "sha256": "74b6a65a6031947cfc7b7418575f7820cec270682f5a9ab075c75bbaab3942f2"
+    },
+    {
+      "name": "obligations.json",
+      "sha256": "ba4d83190d0e1b29236f489708d8f98934acd5306c8427373dcf9f0a2c4242e2"
+    },
+    {
+      "name": "registry_export.tsv",
+      "sha256": "3cc144ff6a8a0ef21ccf9b91a7ac5685a1ceea617214e95cc4700d6d34b48947"
+    },
+    {
+      "name": "servicedesk_export.json",
+      "sha256": "304a1d36a87bf24bb65f1fa9bbdbcca0a68edcab13b5196619a6414e44a28d59"
+    },
+    {
+      "name": "source_notes.md",
+      "sha256": "56cc9ac886df2033827c1e7a3f5ab0279894c9c91ecb1dedc6a6b2ba9dc4eac3"
+    }
+  ],
+  "methodology_sha256": "74b6a65a6031947cfc7b7418575f7820cec270682f5a9ab075c75bbaab3942f2",
+  "methodology_version": "1.0.0",
+  "obligation_set_version": "2026.2",
+  "obligations_sha256": "ba4d83190d0e1b29236f489708d8f98934acd5306c8427373dcf9f0a2c4242e2",
+  "run_id": "run_9a50d8460243a60b",
+  "staleness_threshold_days": 365
+}

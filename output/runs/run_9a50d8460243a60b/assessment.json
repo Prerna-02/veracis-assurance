@@ -1,0 +1,2777 @@
+{
+  "assessment": {
+    "as_at_date": "2026-08-01",
+    "methodology_version": "1.0.0",
+    "obligation_set_version": "2026.2",
+    "provisional_run_id": "assessment:2026.2:1.0.0:2026-08-01",
+    "staleness_threshold_days": 365
+  },
+  "data_quality_issues": [
+    {
+      "assessment_action": "KEEP_FOR_ASSESSMENT",
+      "field_name": "evidence_type",
+      "issue_id": "evidence_csv:0003:EVIDENCE_TYPE_MISMATCH:evidence_type",
+      "issue_type": "EVIDENCE_TYPE_MISMATCH",
+      "message": "Evidence type 'board_minutes' does not match the required evidence type(s) for OBL-003: ['risk_appetite_statement'].",
+      "observation_id": "evidence_csv:0003",
+      "review_required": true,
+      "severity": "WARNING",
+      "source_dataset": "evidence_csv",
+      "source_record_id": "EV-0003"
+    },
+    {
+      "assessment_action": "REVIEW_BEFORE_ASSESSMENT",
+      "field_name": "event_date",
+      "issue_id": "evidence_csv:0007:FUTURE_DATE:event_date",
+      "issue_type": "FUTURE_DATE",
+      "message": "Event date 2026-09-30 is after the assessment as-at date 2026-08-01.",
+      "observation_id": "evidence_csv:0007",
+      "review_required": true,
+      "severity": "WARNING",
+      "source_dataset": "evidence_csv",
+      "source_record_id": "EV-0007"
+    },
+    {
+      "assessment_action": "REVIEW_BEFORE_ASSESSMENT",
+      "field_name": "source_record_id",
+      "issue_id": "evidence_csv:0014:DUPLICATE_SOURCE_RECORD_ID:source_record_id",
+      "issue_type": "DUPLICATE_SOURCE_RECORD_ID",
+      "message": "Source record ID 'EV-0014' occurs more than once in evidence_csv.",
+      "observation_id": "evidence_csv:0014",
+      "review_required": true,
+      "severity": "WARNING",
+      "source_dataset": "evidence_csv",
+      "source_record_id": "EV-0014"
+    },
+    {
+      "assessment_action": "EXCLUDE_FROM_ASSESSMENT",
+      "field_name": "obligation_id",
+      "issue_id": "evidence_csv:0018:UNKNOWN_OBLIGATION:obligation_id",
+      "issue_type": "UNKNOWN_OBLIGATION",
+      "message": "Evidence references 'OBL-014', but that obligation does not exist in the authoritative obligation set.",
+      "observation_id": "evidence_csv:0018",
+      "review_required": true,
+      "severity": "ERROR",
+      "source_dataset": "evidence_csv",
+      "source_record_id": "EV-0018"
+    },
+    {
+      "assessment_action": "EXCLUDE_FROM_ASSESSMENT",
+      "field_name": "obligation_id",
+      "issue_id": "evidence_csv:0019:UNKNOWN_OBLIGATION:obligation_id",
+      "issue_type": "UNKNOWN_OBLIGATION",
+      "message": "Evidence references 'OBL-015', but that obligation does not exist in the authoritative obligation set.",
+      "observation_id": "evidence_csv:0019",
+      "review_required": true,
+      "severity": "ERROR",
+      "source_dataset": "evidence_csv",
+      "source_record_id": "EV-0019"
+    },
+    {
+      "assessment_action": "REVIEW_BEFORE_ASSESSMENT",
+      "field_name": "source_record_id",
+      "issue_id": "evidence_csv:0020:DUPLICATE_SOURCE_RECORD_ID:source_record_id",
+      "issue_type": "DUPLICATE_SOURCE_RECORD_ID",
+      "message": "Source record ID 'EV-0014' occurs more than once in evidence_csv.",
+      "observation_id": "evidence_csv:0020",
+      "review_required": true,
+      "severity": "WARNING",
+      "source_dataset": "evidence_csv",
+      "source_record_id": "EV-0014"
+    },
+    {
+      "assessment_action": "REVIEW_BEFORE_ASSESSMENT",
+      "field_name": "event_date",
+      "issue_id": "evidence_csv:0023:MISSING_FIELD:event_date",
+      "issue_type": "MISSING_FIELD",
+      "message": "Required or important field 'event_date' is missing.",
+      "observation_id": "evidence_csv:0023",
+      "review_required": true,
+      "severity": "WARNING",
+      "source_dataset": "evidence_csv",
+      "source_record_id": "EV-0022"
+    },
+    {
+      "assessment_action": "REVIEW_BEFORE_ASSESSMENT",
+      "field_name": "event_date",
+      "issue_id": "registry:0003:MISSING_FIELD:event_date",
+      "issue_type": "MISSING_FIELD",
+      "message": "Required or important field 'event_date' is missing.",
+      "observation_id": "registry:0003",
+      "review_required": true,
+      "severity": "WARNING",
+      "source_dataset": "registry",
+      "source_record_id": "AST-003"
+    },
+    {
+      "assessment_action": "REVIEW_BEFORE_ASSESSMENT",
+      "field_name": "event_date",
+      "issue_id": "servicedesk:0006:MISSING_FIELD:event_date",
+      "issue_type": "MISSING_FIELD",
+      "message": "Required or important field 'event_date' is missing.",
+      "observation_id": "servicedesk:0006",
+      "review_required": true,
+      "severity": "WARNING",
+      "source_dataset": "servicedesk",
+      "source_record_id": "SD-89004"
+    },
+    {
+      "assessment_action": "KEEP_FOR_ASSESSMENT",
+      "field_name": "evidence_type",
+      "issue_id": "servicedesk:0007:EVIDENCE_TYPE_MISMATCH:evidence_type",
+      "issue_type": "EVIDENCE_TYPE_MISMATCH",
+      "message": "Evidence type 'change_record' does not match the required evidence type(s) for OBL-005: ['risk_assessment'].",
+      "observation_id": "servicedesk:0007",
+      "review_required": true,
+      "severity": "WARNING",
+      "source_dataset": "servicedesk",
+      "source_record_id": "SD-93118"
+    }
+  ],
+  "dimensions": [
+    {
+      "dimension_code": "AEQ",
+      "dimension_name": "Assurance Evidence Quality",
+      "dimension_status": "GREEN",
+      "earned_points": "1.0",
+      "maximum_points": "1.0",
+      "met_count": 1,
+      "not_met_count": 0,
+      "obligation_contributions": [
+        {
+          "contribution": "1.0",
+          "obligation_id": "OBL-012",
+          "obligation_status": "MET",
+          "review_required": false
+        }
+      ],
+      "partial_count": 0,
+      "reason": "1.0 earned points divided by 1.0 maximum points gives 100.00; the methodology bands classify the dimension as GREEN.",
+      "review_required": false,
+      "score": "100.00",
+      "weight": "0.10"
+    },
+    {
+      "dimension_code": "GOV",
+      "dimension_name": "Governance Structure",
+      "dimension_status": "AMBER",
+      "earned_points": "2.0",
+      "maximum_points": "3.0",
+      "met_count": 1,
+      "not_met_count": 0,
+      "obligation_contributions": [
+        {
+          "contribution": "1.0",
+          "obligation_id": "OBL-001",
+          "obligation_status": "MET",
+          "review_required": true
+        },
+        {
+          "contribution": "0.5",
+          "obligation_id": "OBL-002",
+          "obligation_status": "PARTIAL",
+          "review_required": true
+        },
+        {
+          "contribution": "0.5",
+          "obligation_id": "OBL-003",
+          "obligation_status": "PARTIAL",
+          "review_required": true
+        }
+      ],
+      "partial_count": 2,
+      "reason": "2.0 earned points divided by 3.0 maximum points gives 66.67; the methodology bands classify the dimension as AMBER.",
+      "review_required": true,
+      "score": "66.67",
+      "weight": "0.25"
+    },
+    {
+      "dimension_code": "MRC",
+      "dimension_name": "Model and Tool Risk Controls",
+      "dimension_status": "GREEN",
+      "earned_points": "2.5",
+      "maximum_points": "3.0",
+      "met_count": 2,
+      "not_met_count": 0,
+      "obligation_contributions": [
+        {
+          "contribution": "1.0",
+          "obligation_id": "OBL-004",
+          "obligation_status": "MET",
+          "review_required": false
+        },
+        {
+          "contribution": "0.5",
+          "obligation_id": "OBL-005",
+          "obligation_status": "PARTIAL",
+          "review_required": true
+        },
+        {
+          "contribution": "1.0",
+          "obligation_id": "OBL-006",
+          "obligation_status": "MET",
+          "review_required": false
+        }
+      ],
+      "partial_count": 1,
+      "reason": "2.5 earned points divided by 3.0 maximum points gives 83.33; the methodology bands classify the dimension as GREEN.",
+      "review_required": true,
+      "score": "83.33",
+      "weight": "0.25"
+    },
+    {
+      "dimension_code": "OPI",
+      "dimension_name": "Operational Integrity",
+      "dimension_status": "GREEN",
+      "earned_points": "2.5",
+      "maximum_points": "3.0",
+      "met_count": 2,
+      "not_met_count": 0,
+      "obligation_contributions": [
+        {
+          "contribution": "0.5",
+          "obligation_id": "OBL-009",
+          "obligation_status": "PARTIAL",
+          "review_required": true
+        },
+        {
+          "contribution": "1.0",
+          "obligation_id": "OBL-010",
+          "obligation_status": "MET",
+          "review_required": true
+        },
+        {
+          "contribution": "1.0",
+          "obligation_id": "OBL-011",
+          "obligation_status": "MET",
+          "review_required": true
+        }
+      ],
+      "partial_count": 1,
+      "reason": "2.5 earned points divided by 3.0 maximum points gives 83.33; the methodology bands classify the dimension as GREEN.",
+      "review_required": true,
+      "score": "83.33",
+      "weight": "0.20"
+    },
+    {
+      "dimension_code": "RCP",
+      "dimension_name": "Regulatory Compliance Posture",
+      "dimension_status": "AMBER",
+      "earned_points": "1.5",
+      "maximum_points": "2.0",
+      "met_count": 1,
+      "not_met_count": 0,
+      "obligation_contributions": [
+        {
+          "contribution": "1.0",
+          "obligation_id": "OBL-007",
+          "obligation_status": "MET",
+          "review_required": true
+        },
+        {
+          "contribution": "0.5",
+          "obligation_id": "OBL-008",
+          "obligation_status": "PARTIAL",
+          "review_required": true
+        }
+      ],
+      "partial_count": 1,
+      "reason": "1.5 earned points divided by 2.0 maximum points gives 75.00; the methodology bands classify the dimension as AMBER.",
+      "review_required": true,
+      "score": "75.00",
+      "weight": "0.20"
+    }
+  ],
+  "evidence_observations": [
+    {
+      "date_basis": "evidence_date",
+      "digest": "a41f9c2b",
+      "event_date": "2026-03-14",
+      "evidence_type": "governance_policy",
+      "normalized_status": "APPROVED",
+      "obligation_id": "OBL-001",
+      "observation_id": "evidence_csv:0001",
+      "origin_system": "SharePoint",
+      "owner": "S. Rawal",
+      "raw_date_value": "2026-03-14",
+      "raw_status": "APPROVED",
+      "source_category": null,
+      "source_dataset": "evidence_csv",
+      "source_position": 1,
+      "source_record_id": "EV-0001",
+      "title": "Group AI and Emerging Technology Policy",
+      "version": "2.1"
+    },
+    {
+      "date_basis": "evidence_date",
+      "digest": "7d0e11aa",
+      "event_date": "2024-05-02",
+      "evidence_type": "raci_matrix",
+      "normalized_status": "APPROVED",
+      "obligation_id": "OBL-002",
+      "observation_id": "evidence_csv:0002",
+      "origin_system": "SharePoint",
+      "owner": "S. Rawal",
+      "raw_date_value": "2024-05-02",
+      "raw_status": "APPROVED",
+      "source_category": null,
+      "source_dataset": "evidence_csv",
+      "source_position": 2,
+      "source_record_id": "EV-0002",
+      "title": "AI Lifecycle Ownership Matrix",
+      "version": "1.0"
+    },
+    {
+      "date_basis": "evidence_date",
+      "digest": "c9b30f57",
+      "event_date": "2026-02-20",
+      "evidence_type": "board_minutes",
+      "normalized_status": "APPROVED",
+      "obligation_id": "OBL-003",
+      "observation_id": "evidence_csv:0003",
+      "origin_system": "Board portal",
+      "owner": "Company Secretary",
+      "raw_date_value": "2026-02-20",
+      "raw_status": "APPROVED",
+      "source_category": null,
+      "source_dataset": "evidence_csv",
+      "source_position": 3,
+      "source_record_id": "EV-0003",
+      "title": "Board Risk Committee minutes, Feb 2026",
+      "version": "1.0"
+    },
+    {
+      "date_basis": "evidence_date",
+      "digest": "1b8ec440",
+      "event_date": "2026-07-11",
+      "evidence_type": "system_inventory",
+      "normalized_status": "APPROVED",
+      "obligation_id": "OBL-004",
+      "observation_id": "evidence_csv:0004",
+      "origin_system": "IT asset register",
+      "owner": "N. Mehra",
+      "raw_date_value": "2026-07-11",
+      "raw_status": "APPROVED",
+      "source_category": null,
+      "source_dataset": "evidence_csv",
+      "source_position": 4,
+      "source_record_id": "EV-0004",
+      "title": "AI Systems Register (IT-maintained)",
+      "version": "4.3"
+    },
+    {
+      "date_basis": "evidence_date",
+      "digest": "55aa9021",
+      "event_date": "2025-11-02",
+      "evidence_type": "system_inventory",
+      "normalized_status": "APPROVED",
+      "obligation_id": "OBL-004",
+      "observation_id": "evidence_csv:0005",
+      "origin_system": "SharePoint",
+      "owner": "S. Rawal",
+      "raw_date_value": "2025-11-02",
+      "raw_status": "APPROVED",
+      "source_category": null,
+      "source_dataset": "evidence_csv",
+      "source_position": 5,
+      "source_record_id": "EV-0005",
+      "title": "AI Systems Register (Compliance copy)",
+      "version": "3.0"
+    },
+    {
+      "date_basis": "evidence_date",
+      "digest": "3f77b1c0",
+      "event_date": "2026-06-01",
+      "evidence_type": "risk_assessment",
+      "normalized_status": "DRAFT",
+      "obligation_id": "OBL-005",
+      "observation_id": "evidence_csv:0006",
+      "origin_system": "SharePoint",
+      "owner": "A. Iqbal",
+      "raw_date_value": "2026-06-01",
+      "raw_status": "DRAFT",
+      "source_category": null,
+      "source_dataset": "evidence_csv",
+      "source_position": 6,
+      "source_record_id": "EV-0006",
+      "title": "Pre-deployment assessment: Portfolio Rebalance Suggester",
+      "version": "0.4"
+    },
+    {
+      "date_basis": "evidence_date",
+      "digest": "8c21de93",
+      "event_date": "2026-09-30",
+      "evidence_type": "risk_assessment",
+      "normalized_status": "APPROVED",
+      "obligation_id": "OBL-005",
+      "observation_id": "evidence_csv:0007",
+      "origin_system": "SharePoint",
+      "owner": "A. Iqbal",
+      "raw_date_value": "2026-09-30",
+      "raw_status": "APPROVED",
+      "source_category": null,
+      "source_dataset": "evidence_csv",
+      "source_position": 7,
+      "source_record_id": "EV-0007",
+      "title": "Pre-deployment assessment: KYC Document Reader",
+      "version": "1.0"
+    },
+    {
+      "date_basis": "evidence_date",
+      "digest": "2ed7ff10",
+      "event_date": "2026-01-19",
+      "evidence_type": "vendor_due_diligence",
+      "normalized_status": "APPROVED",
+      "obligation_id": "OBL-006",
+      "observation_id": "evidence_csv:0008",
+      "origin_system": "Procurement",
+      "owner": "Procurement",
+      "raw_date_value": "2026-01-19",
+      "raw_status": "APPROVED",
+      "source_category": null,
+      "source_dataset": "evidence_csv",
+      "source_position": 8,
+      "source_record_id": "EV-0008",
+      "title": "Vendor DD pack: Northwind Analytics",
+      "version": "1.2"
+    },
+    {
+      "date_basis": "evidence_date",
+      "digest": "9a04c7be",
+      "event_date": "2023-08-30",
+      "evidence_type": "vendor_due_diligence",
+      "normalized_status": "APPROVED",
+      "obligation_id": "OBL-006",
+      "observation_id": "evidence_csv:0009",
+      "origin_system": "Procurement",
+      "owner": "Procurement",
+      "raw_date_value": "2023-08-30",
+      "raw_status": "APPROVED",
+      "source_category": null,
+      "source_dataset": "evidence_csv",
+      "source_position": 9,
+      "source_record_id": "EV-0009",
+      "title": "Vendor DD pack: Cedar OCR Services",
+      "version": "1.0"
+    },
+    {
+      "date_basis": "evidence_date",
+      "digest": "6b1d0e44",
+      "event_date": "2026-04-08",
+      "evidence_type": "compliance_mapping",
+      "normalized_status": "APPROVED",
+      "obligation_id": "OBL-007",
+      "observation_id": "evidence_csv:0010",
+      "origin_system": "Compliance register",
+      "owner": "S. Rawal",
+      "raw_date_value": "2026-04-08",
+      "raw_status": "APPROVED",
+      "source_category": null,
+      "source_dataset": "evidence_csv",
+      "source_position": 10,
+      "source_record_id": "EV-0010",
+      "title": "Advice process control mapping (DIFC entity)",
+      "version": "2.0"
+    },
+    {
+      "date_basis": "evidence_date",
+      "digest": "0cc48a17",
+      "event_date": "2026-05-22",
+      "evidence_type": "gap_analysis",
+      "normalized_status": "DRAFT",
+      "obligation_id": "OBL-008",
+      "observation_id": "evidence_csv:0011",
+      "origin_system": "Compliance register",
+      "owner": "S. Rawal",
+      "raw_date_value": "2026-05-22",
+      "raw_status": "DRAFT",
+      "source_category": null,
+      "source_dataset": "evidence_csv",
+      "source_position": 11,
+      "source_record_id": "EV-0011",
+      "title": "AI regulatory gap analysis v1",
+      "version": "1.0"
+    },
+    {
+      "date_basis": "evidence_date",
+      "digest": "0cc48a17",
+      "event_date": "2026-05-22",
+      "evidence_type": "gap_analysis",
+      "normalized_status": "APPROVED",
+      "obligation_id": "OBL-008",
+      "observation_id": "evidence_csv:0012",
+      "origin_system": "Compliance register",
+      "owner": "S. Rawal",
+      "raw_date_value": "2026-05-22",
+      "raw_status": "APPROVED",
+      "source_category": null,
+      "source_dataset": "evidence_csv",
+      "source_position": 12,
+      "source_record_id": "EV-0012",
+      "title": "AI regulatory gap analysis v1",
+      "version": "1.0"
+    },
+    {
+      "date_basis": "evidence_date",
+      "digest": "44f0b9c2",
+      "event_date": "2025-10-05",
+      "evidence_type": "incident_procedure",
+      "normalized_status": "APPROVED",
+      "obligation_id": "OBL-009",
+      "observation_id": "evidence_csv:0013",
+      "origin_system": "ServiceDesk",
+      "owner": "N. Mehra",
+      "raw_date_value": "2025-10-05",
+      "raw_status": "APPROVED",
+      "source_category": null,
+      "source_dataset": "evidence_csv",
+      "source_position": 13,
+      "source_record_id": "EV-0013",
+      "title": "Group Incident Management Procedure",
+      "version": "3.1"
+    },
+    {
+      "date_basis": "evidence_date",
+      "digest": "d2b7e015",
+      "event_date": "2026-06-30",
+      "evidence_type": "access_control_log",
+      "normalized_status": "APPROVED",
+      "obligation_id": "OBL-010",
+      "observation_id": "evidence_csv:0014",
+      "origin_system": "IAM",
+      "owner": "N. Mehra",
+      "raw_date_value": "2026-06-30",
+      "raw_status": "APPROVED",
+      "source_category": null,
+      "source_dataset": "evidence_csv",
+      "source_position": 14,
+      "source_record_id": "EV-0014",
+      "title": "Production access review, Q2 2026",
+      "version": "1.0"
+    },
+    {
+      "date_basis": "evidence_date",
+      "digest": "e71c3a08",
+      "event_date": "2026-02-11",
+      "evidence_type": "change_record",
+      "normalized_status": "APPROVED",
+      "obligation_id": "OBL-011",
+      "observation_id": "evidence_csv:0015",
+      "origin_system": "Email",
+      "owner": "Head of Distribution",
+      "raw_date_value": "2026-02-11",
+      "raw_status": "APPROVED",
+      "source_category": null,
+      "source_dataset": "evidence_csv",
+      "source_position": 15,
+      "source_record_id": "EV-0015",
+      "title": "Change approval: Lead Score Engine v3 release",
+      "version": "1.0"
+    },
+    {
+      "date_basis": "evidence_date",
+      "digest": "b0937fc5",
+      "event_date": "2026-07-02",
+      "evidence_type": "change_record",
+      "normalized_status": "APPROVED",
+      "obligation_id": "OBL-011",
+      "observation_id": "evidence_csv:0016",
+      "origin_system": "ServiceDesk",
+      "owner": "N. Mehra",
+      "raw_date_value": "2026-07-02",
+      "raw_status": "APPROVED",
+      "source_category": null,
+      "source_dataset": "evidence_csv",
+      "source_position": 16,
+      "source_record_id": "EV-0016",
+      "title": "Change approval: Meridian Chat content update",
+      "version": "1.0"
+    },
+    {
+      "date_basis": "evidence_date",
+      "digest": "fa2e8801",
+      "event_date": "2022-12-01",
+      "evidence_type": "retention_record",
+      "normalized_status": "APPROVED",
+      "obligation_id": "OBL-012",
+      "observation_id": "evidence_csv:0017",
+      "origin_system": "SharePoint",
+      "owner": "Company Secretary",
+      "raw_date_value": "2022-12-01",
+      "raw_status": "APPROVED",
+      "source_category": null,
+      "source_dataset": "evidence_csv",
+      "source_position": 17,
+      "source_record_id": "EV-0017",
+      "title": "Document retention schedule",
+      "version": "1.0"
+    },
+    {
+      "date_basis": "evidence_date",
+      "digest": "77b2c419",
+      "event_date": "2026-03-03",
+      "evidence_type": "risk_assessment",
+      "normalized_status": "APPROVED",
+      "obligation_id": "OBL-014",
+      "observation_id": "evidence_csv:0018",
+      "origin_system": "SharePoint",
+      "owner": "A. Iqbal",
+      "raw_date_value": "2026-03-03",
+      "raw_status": "APPROVED",
+      "source_category": null,
+      "source_dataset": "evidence_csv",
+      "source_position": 18,
+      "source_record_id": "EV-0018",
+      "title": "Pre-deployment assessment: ClaimSort",
+      "version": "1.0"
+    },
+    {
+      "date_basis": "evidence_date",
+      "digest": "31de70ab",
+      "event_date": "2026-02-14",
+      "evidence_type": "vendor_due_diligence",
+      "normalized_status": "APPROVED",
+      "obligation_id": "OBL-015",
+      "observation_id": "evidence_csv:0019",
+      "origin_system": "Procurement",
+      "owner": "Procurement",
+      "raw_date_value": "2026-02-14",
+      "raw_status": "APPROVED",
+      "source_category": null,
+      "source_dataset": "evidence_csv",
+      "source_position": 19,
+      "source_record_id": "EV-0019",
+      "title": "Vendor DD pack: Helios Carrier Platform",
+      "version": "1.0"
+    },
+    {
+      "date_basis": "evidence_date",
+      "digest": "aa19c73d",
+      "event_date": "2026-03-31",
+      "evidence_type": "access_control_log",
+      "normalized_status": "APPROVED",
+      "obligation_id": "OBL-010",
+      "observation_id": "evidence_csv:0020",
+      "origin_system": "IAM",
+      "owner": "N. Mehra",
+      "raw_date_value": "2026-03-31",
+      "raw_status": "APPROVED",
+      "source_category": null,
+      "source_dataset": "evidence_csv",
+      "source_position": 20,
+      "source_record_id": "EV-0014",
+      "title": "Production access review, Q1 2026",
+      "version": "1.0"
+    },
+    {
+      "date_basis": "evidence_date",
+      "digest": "5e6a2211",
+      "event_date": "2025-01-09",
+      "evidence_type": "governance_policy",
+      "normalized_status": "SUPERSEDED",
+      "obligation_id": "OBL-001",
+      "observation_id": "evidence_csv:0021",
+      "origin_system": "SharePoint",
+      "owner": "S. Rawal",
+      "raw_date_value": "2025-01-09",
+      "raw_status": "SUPERSEDED",
+      "source_category": null,
+      "source_dataset": "evidence_csv",
+      "source_position": 21,
+      "source_record_id": "EV-0020",
+      "title": "Group AI and Emerging Technology Policy",
+      "version": "1.0"
+    },
+    {
+      "date_basis": "evidence_date",
+      "digest": "cd8801f4",
+      "event_date": "2026-07-25",
+      "evidence_type": "incident_procedure",
+      "normalized_status": "DRAFT",
+      "obligation_id": "OBL-009",
+      "observation_id": "evidence_csv:0022",
+      "origin_system": "SharePoint",
+      "owner": "N. Mehra",
+      "raw_date_value": "2026-07-25",
+      "raw_status": "DRAFT",
+      "source_category": null,
+      "source_dataset": "evidence_csv",
+      "source_position": 22,
+      "source_record_id": "EV-0021",
+      "title": "AI incident annex (draft)",
+      "version": "0.2"
+    },
+    {
+      "date_basis": "evidence_date",
+      "digest": "6f21b90c",
+      "event_date": null,
+      "evidence_type": "raci_matrix",
+      "normalized_status": "APPROVED",
+      "obligation_id": "OBL-002",
+      "observation_id": "evidence_csv:0023",
+      "origin_system": "SharePoint",
+      "owner": "S. Rawal",
+      "raw_date_value": null,
+      "raw_status": "APPROVED",
+      "source_category": null,
+      "source_dataset": "evidence_csv",
+      "source_position": 23,
+      "source_record_id": "EV-0022",
+      "title": "AI Lifecycle Ownership Matrix",
+      "version": "1.1"
+    },
+    {
+      "date_basis": "evidence_date",
+      "digest": "19ba4e77",
+      "event_date": "2026-06-17",
+      "evidence_type": "retention_record",
+      "normalized_status": "APPROVED",
+      "obligation_id": "OBL-012",
+      "observation_id": "evidence_csv:0024",
+      "origin_system": "AuditBoard",
+      "owner": "Internal Audit",
+      "raw_date_value": "2026-06-17",
+      "raw_status": "APPROVED",
+      "source_category": null,
+      "source_dataset": "evidence_csv",
+      "source_position": 24,
+      "source_record_id": "EV-0023",
+      "title": "Evidence retention and retrieval test report",
+      "version": "1.0"
+    },
+    {
+      "date_basis": "evidence_date",
+      "digest": "6b1d0e44",
+      "event_date": "2026-04-08",
+      "evidence_type": "compliance_mapping",
+      "normalized_status": "APPROVED",
+      "obligation_id": "OBL-007",
+      "observation_id": "evidence_csv:0025",
+      "origin_system": "Compliance register",
+      "owner": "S. Rawal",
+      "raw_date_value": "2026-04-08",
+      "raw_status": "APPROVED",
+      "source_category": null,
+      "source_dataset": "evidence_csv",
+      "source_position": 25,
+      "source_record_id": "EV-0024",
+      "title": "Advice process control mapping (onshore entity)",
+      "version": "2.0"
+    },
+    {
+      "date_basis": "captured_on",
+      "digest": "1b8ec440",
+      "event_date": "2026-07-11",
+      "evidence_type": "system_inventory",
+      "normalized_status": "APPROVED",
+      "obligation_id": "OBL-004",
+      "observation_id": "registry:0001",
+      "origin_system": "Meridian Asset Registry",
+      "owner": "N. Mehra",
+      "raw_date_value": "11/07/2026",
+      "raw_status": "Approved",
+      "source_category": null,
+      "source_dataset": "registry",
+      "source_position": 1,
+      "source_record_id": "AST-001",
+      "title": "AI Systems Register (IT-maintained)",
+      "version": "4.3"
+    },
+    {
+      "date_basis": "captured_on",
+      "digest": "3f77b1c0",
+      "event_date": "2026-06-01",
+      "evidence_type": "risk_assessment",
+      "normalized_status": "DRAFT",
+      "obligation_id": "OBL-005",
+      "observation_id": "registry:0002",
+      "origin_system": "Meridian Asset Registry",
+      "owner": "A. Iqbal",
+      "raw_date_value": "01/06/2026",
+      "raw_status": "Draft",
+      "source_category": null,
+      "source_dataset": "registry",
+      "source_position": 2,
+      "source_record_id": "AST-002",
+      "title": "Pre-deployment assessment: Portfolio Rebalance Suggester",
+      "version": "0.4"
+    },
+    {
+      "date_basis": "captured_on",
+      "digest": "b4429e70",
+      "event_date": null,
+      "evidence_type": "risk_assessment",
+      "normalized_status": "APPROVED",
+      "obligation_id": "OBL-005",
+      "observation_id": "registry:0003",
+      "origin_system": "Meridian Asset Registry",
+      "owner": "A. Iqbal",
+      "raw_date_value": null,
+      "raw_status": "Approved",
+      "source_category": null,
+      "source_dataset": "registry",
+      "source_position": 3,
+      "source_record_id": "AST-003",
+      "title": "Pre-deployment assessment: Lead Score Engine",
+      "version": "1.0"
+    },
+    {
+      "date_basis": "captured_on",
+      "digest": "2ed7ff10",
+      "event_date": "2026-01-19",
+      "evidence_type": "vendor_due_diligence",
+      "normalized_status": "APPROVED",
+      "obligation_id": "OBL-006",
+      "observation_id": "registry:0004",
+      "origin_system": "Meridian Asset Registry",
+      "owner": "Procurement",
+      "raw_date_value": "19/01/2026",
+      "raw_status": "Approved",
+      "source_category": null,
+      "source_dataset": "registry",
+      "source_position": 4,
+      "source_record_id": "AST-004",
+      "title": "Vendor DD pack: Northwind Analytics",
+      "version": "1.2"
+    },
+    {
+      "date_basis": "captured_on",
+      "digest": "c1180fd5",
+      "event_date": "2026-04-03",
+      "evidence_type": "vendor_due_diligence",
+      "normalized_status": "APPROVED",
+      "obligation_id": "OBL-006",
+      "observation_id": "registry:0005",
+      "origin_system": "Meridian Asset Registry",
+      "owner": "Procurement",
+      "raw_date_value": "03/04/2026",
+      "raw_status": "Approved",
+      "source_category": null,
+      "source_dataset": "registry",
+      "source_position": 5,
+      "source_record_id": "AST-005",
+      "title": "Vendor DD pack: Meridian Chat supplier",
+      "version": "1.0"
+    },
+    {
+      "date_basis": "captured_on",
+      "digest": "72ff3d19",
+      "event_date": "2026-06-30",
+      "evidence_type": "system_inventory",
+      "normalized_status": "APPROVED",
+      "obligation_id": "OBL-004",
+      "observation_id": "registry:0006",
+      "origin_system": "Meridian Asset Registry",
+      "owner": "N. Mehra",
+      "raw_date_value": "30/06/2026",
+      "raw_status": "Approved",
+      "source_category": null,
+      "source_dataset": "registry",
+      "source_position": 6,
+      "source_record_id": "AST-006",
+      "title": "Shadow AI discovery scan - Q2 2026",
+      "version": "1.0"
+    },
+    {
+      "date_basis": "captured_on",
+      "digest": "aa19c73d",
+      "event_date": "2026-03-31",
+      "evidence_type": "access_control_log",
+      "normalized_status": "APPROVED",
+      "obligation_id": "OBL-010",
+      "observation_id": "registry:0007",
+      "origin_system": "Meridian Asset Registry",
+      "owner": "N. Mehra",
+      "raw_date_value": "31/03/2026",
+      "raw_status": "Approved",
+      "source_category": null,
+      "source_dataset": "registry",
+      "source_position": 7,
+      "source_record_id": "AST-007",
+      "title": "Production access review, Q1 2026",
+      "version": "1.0"
+    },
+    {
+      "date_basis": "captured_on",
+      "digest": "9911ce40",
+      "event_date": "2026-07-14",
+      "evidence_type": "risk_appetite_statement",
+      "normalized_status": "DRAFT",
+      "obligation_id": "OBL-003",
+      "observation_id": "registry:0008",
+      "origin_system": "Meridian Asset Registry",
+      "owner": "S. Rawal",
+      "raw_date_value": "14/07/2026",
+      "raw_status": "Draft",
+      "source_category": null,
+      "source_dataset": "registry",
+      "source_position": 8,
+      "source_record_id": "AST-008",
+      "title": "AI risk appetite - proposed wording",
+      "version": "0.3"
+    },
+    {
+      "date_basis": "captured_on",
+      "digest": "19ba4e77",
+      "event_date": "2026-06-17",
+      "evidence_type": "retention_record",
+      "normalized_status": "APPROVED",
+      "obligation_id": "OBL-012",
+      "observation_id": "registry:0009",
+      "origin_system": "Meridian Asset Registry",
+      "owner": "Internal Audit",
+      "raw_date_value": "17/06/2026",
+      "raw_status": "Approved",
+      "source_category": null,
+      "source_dataset": "registry",
+      "source_position": 9,
+      "source_record_id": "AST-009",
+      "title": "Evidence retention and retrieval test report",
+      "version": "1.0"
+    },
+    {
+      "date_basis": "captured_on",
+      "digest": "7d0e11aa",
+      "event_date": "2024-05-02",
+      "evidence_type": "raci_matrix",
+      "normalized_status": "APPROVED",
+      "obligation_id": "OBL-002",
+      "observation_id": "registry:0010",
+      "origin_system": "Meridian Asset Registry",
+      "owner": "S. Rawal",
+      "raw_date_value": "02/05/2024",
+      "raw_status": "Approved",
+      "source_category": null,
+      "source_dataset": "registry",
+      "source_position": 10,
+      "source_record_id": "AST-010",
+      "title": "AI Lifecycle Ownership Matrix",
+      "version": "1.0"
+    },
+    {
+      "date_basis": "closed_at",
+      "digest": "e71c3a08",
+      "event_date": "2026-02-11",
+      "evidence_type": "change_record",
+      "normalized_status": "APPROVED",
+      "obligation_id": "OBL-011",
+      "observation_id": "servicedesk:0001",
+      "origin_system": "Meridian ServiceDesk",
+      "owner": "Head of Distribution",
+      "raw_date_value": "2026-02-11T14:02:00Z",
+      "raw_status": "Closed - Approved",
+      "source_category": "Change Approval",
+      "source_dataset": "servicedesk",
+      "source_position": 1,
+      "source_record_id": "SD-88214",
+      "title": "Change approval: Lead Score Engine v3 release",
+      "version": "1.0"
+    },
+    {
+      "date_basis": "closed_at",
+      "digest": "b0937fc5",
+      "event_date": "2026-07-02",
+      "evidence_type": "change_record",
+      "normalized_status": "APPROVED",
+      "obligation_id": "OBL-011",
+      "observation_id": "servicedesk:0002",
+      "origin_system": "Meridian ServiceDesk",
+      "owner": "N. Mehra",
+      "raw_date_value": "2026-07-02T08:31:00Z",
+      "raw_status": "Closed - Approved",
+      "source_category": "Change Approval",
+      "source_dataset": "servicedesk",
+      "source_position": 2,
+      "source_record_id": "SD-91077",
+      "title": "Change approval: Meridian Chat content update",
+      "version": "1.0"
+    },
+    {
+      "date_basis": "closed_at",
+      "digest": "cd8801f4",
+      "event_date": "2026-07-25",
+      "evidence_type": "incident_procedure",
+      "normalized_status": "DRAFT",
+      "obligation_id": "OBL-009",
+      "observation_id": "servicedesk:0003",
+      "origin_system": "Meridian ServiceDesk",
+      "owner": "N. Mehra",
+      "raw_date_value": "2026-07-25T11:45:00Z",
+      "raw_status": "Open - In Draft",
+      "source_category": "Procedure",
+      "source_dataset": "servicedesk",
+      "source_position": 3,
+      "source_record_id": "SD-90455",
+      "title": "AI incident annex (draft)",
+      "version": "0.2"
+    },
+    {
+      "date_basis": "closed_at",
+      "digest": "40ca7b12",
+      "event_date": "2025-12-19",
+      "evidence_type": "change_record",
+      "normalized_status": "APPROVED_RETROSPECTIVELY",
+      "obligation_id": "OBL-011",
+      "observation_id": "servicedesk:0004",
+      "origin_system": "Meridian ServiceDesk",
+      "owner": "Operations",
+      "raw_date_value": "2025-12-19T17:20:00Z",
+      "raw_status": "Closed - Approved Retrospectively",
+      "source_category": "Change Approval",
+      "source_dataset": "servicedesk",
+      "source_position": 4,
+      "source_record_id": "SD-86300",
+      "title": "Emergency change: KYC Document Reader field mapping",
+      "version": "1.0"
+    },
+    {
+      "date_basis": "closed_at",
+      "digest": "d2b7e015",
+      "event_date": "2026-06-30",
+      "evidence_type": "access_control_log",
+      "normalized_status": "APPROVED",
+      "obligation_id": "OBL-010",
+      "observation_id": "servicedesk:0005",
+      "origin_system": "Meridian ServiceDesk",
+      "owner": "N. Mehra",
+      "raw_date_value": "2026-06-30T16:00:00Z",
+      "raw_status": "Closed - Approved",
+      "source_category": "Access Review",
+      "source_dataset": "servicedesk",
+      "source_position": 5,
+      "source_record_id": "SD-92310",
+      "title": "Production access review, Q2 2026",
+      "version": "1.0"
+    },
+    {
+      "date_basis": "closed_at",
+      "digest": "44f0b9c2",
+      "event_date": null,
+      "evidence_type": "incident_procedure",
+      "normalized_status": "AWAITING_SIGNOFF",
+      "obligation_id": "OBL-009",
+      "observation_id": "servicedesk:0006",
+      "origin_system": "Meridian ServiceDesk",
+      "owner": "N. Mehra",
+      "raw_date_value": null,
+      "raw_status": "Open - Awaiting Sign-off",
+      "source_category": "Procedure",
+      "source_dataset": "servicedesk",
+      "source_position": 6,
+      "source_record_id": "SD-89004",
+      "title": "Group Incident Management Procedure - annual review",
+      "version": "3.1"
+    },
+    {
+      "date_basis": "closed_at",
+      "digest": "77e0aa31",
+      "event_date": "2026-07-28",
+      "evidence_type": "change_record",
+      "normalized_status": "APPROVED",
+      "obligation_id": "OBL-005",
+      "observation_id": "servicedesk:0007",
+      "origin_system": "Meridian ServiceDesk",
+      "owner": "Head of Investments",
+      "raw_date_value": "2026-07-28T10:05:00Z",
+      "raw_status": "Closed - Approved",
+      "source_category": "Change Approval",
+      "source_dataset": "servicedesk",
+      "source_position": 7,
+      "source_record_id": "SD-93118",
+      "title": "Change approval: Portfolio Rebalance Suggester vendor upgrade",
+      "version": "1.0"
+    }
+  ],
+  "obligations": [
+    {
+      "dimension": "GOV",
+      "evidence_evaluations": [
+        {
+          "assessment_unit_id": "observation:evidence_csv:0001",
+          "date_state": "CURRENT",
+          "decision_basis": "METHODOLOGY",
+          "digest": "a41f9c2b",
+          "event_dates": [
+            "2026-03-14"
+          ],
+          "evidence_types": [
+            "governance_policy"
+          ],
+          "normalized_statuses": [
+            "APPROVED"
+          ],
+          "obligation_id": "OBL-001",
+          "observation_ids": [
+            "evidence_csv:0001"
+          ],
+          "qualifies_for_met": true,
+          "reasons": [
+            "All supplied event dates are current under the methodology.",
+            "Effective normalized status is APPROVED.",
+            "Evidence type matches the obligation's required type.",
+            "The unit is approved, current, type-matching, and free of core status or metadata conflicts."
+          ],
+          "reconciliation_type": null,
+          "review_required": false,
+          "source_datasets": [
+            "evidence_csv"
+          ],
+          "source_record_ids": [
+            "EV-0001"
+          ],
+          "status_state": "APPROVED",
+          "supports_partial": false,
+          "type_matches": true
+        },
+        {
+          "assessment_unit_id": "observation:evidence_csv:0021",
+          "date_state": "STALE",
+          "decision_basis": "ENGINEERING_POLICY",
+          "digest": "5e6a2211",
+          "event_dates": [
+            "2025-01-09"
+          ],
+          "evidence_types": [
+            "governance_policy"
+          ],
+          "normalized_statuses": [
+            "SUPERSEDED"
+          ],
+          "obligation_id": "OBL-001",
+          "observation_ids": [
+            "evidence_csv:0021"
+          ],
+          "qualifies_for_met": false,
+          "reasons": [
+            "All supplied event dates exceed the methodology staleness threshold.",
+            "Evidence type matches the obligation's required type.",
+            "Superseded evidence cannot prove a current approved state; its methodology treatment requires institutional confirmation.",
+            "The unit supports PARTIAL under a conservative engineering policy for a condition not explicitly resolved by the methodology."
+          ],
+          "reconciliation_type": null,
+          "review_required": true,
+          "source_datasets": [
+            "evidence_csv"
+          ],
+          "source_record_ids": [
+            "EV-0020"
+          ],
+          "status_state": "SUPERSEDED",
+          "supports_partial": true,
+          "type_matches": true
+        }
+      ],
+      "obligation_id": "OBL-001",
+      "partial_unit_ids": [
+        "observation:evidence_csv:0021"
+      ],
+      "qualifying_unit_ids": [
+        "observation:evidence_csv:0001"
+      ],
+      "reason": "At least one logical evidence unit is approved, current, type-matching, and eligible for MET: observation:evidence_csv:0001.",
+      "review_required": true,
+      "status": "MET"
+    },
+    {
+      "dimension": "GOV",
+      "evidence_evaluations": [
+        {
+          "assessment_unit_id": "artefact:7d0e11aa",
+          "date_state": "STALE",
+          "decision_basis": "METHODOLOGY",
+          "digest": "7d0e11aa",
+          "event_dates": [
+            "2024-05-02"
+          ],
+          "evidence_types": [
+            "raci_matrix"
+          ],
+          "normalized_statuses": [
+            "APPROVED"
+          ],
+          "obligation_id": "OBL-002",
+          "observation_ids": [
+            "evidence_csv:0002",
+            "registry:0010"
+          ],
+          "qualifies_for_met": false,
+          "reasons": [
+            "All supplied event dates exceed the methodology staleness threshold.",
+            "Effective normalized status is APPROVED.",
+            "Evidence type matches the obligation's required type.",
+            "Reconciliation CONSISTENT_DUPLICATE: Multiple source observations share this digest and agree on important assessment metadata. Treat them as one artefact for assessment without removing their source provenance.",
+            "The unit supports PARTIAL under the supplied methodology."
+          ],
+          "reconciliation_type": "CONSISTENT_DUPLICATE",
+          "review_required": false,
+          "source_datasets": [
+            "evidence_csv",
+            "registry"
+          ],
+          "source_record_ids": [
+            "AST-010",
+            "EV-0002"
+          ],
+          "status_state": "APPROVED",
+          "supports_partial": true,
+          "type_matches": true
+        },
+        {
+          "assessment_unit_id": "observation:evidence_csv:0023",
+          "date_state": "MISSING_DATE",
+          "decision_basis": "ENGINEERING_POLICY",
+          "digest": "6f21b90c",
+          "event_dates": [],
+          "evidence_types": [
+            "raci_matrix"
+          ],
+          "normalized_statuses": [
+            "APPROVED"
+          ],
+          "obligation_id": "OBL-002",
+          "observation_ids": [
+            "evidence_csv:0023"
+          ],
+          "qualifies_for_met": false,
+          "reasons": [
+            "At least one event date is missing, so currency cannot be established.",
+            "Data quality MISSING_FIELD: Required or important field 'event_date' is missing.",
+            "Effective normalized status is APPROVED.",
+            "Evidence type matches the obligation's required type.",
+            "The unit supports PARTIAL under a conservative engineering policy for a condition not explicitly resolved by the methodology."
+          ],
+          "reconciliation_type": null,
+          "review_required": true,
+          "source_datasets": [
+            "evidence_csv"
+          ],
+          "source_record_ids": [
+            "EV-0022"
+          ],
+          "status_state": "APPROVED",
+          "supports_partial": true,
+          "type_matches": true
+        }
+      ],
+      "obligation_id": "OBL-002",
+      "partial_unit_ids": [
+        "artefact:7d0e11aa",
+        "observation:evidence_csv:0023"
+      ],
+      "qualifying_unit_ids": [],
+      "reason": "No evidence unit qualifies for MET; the following units support PARTIAL: artefact:7d0e11aa, observation:evidence_csv:0023.",
+      "review_required": true,
+      "status": "PARTIAL"
+    },
+    {
+      "dimension": "GOV",
+      "evidence_evaluations": [
+        {
+          "assessment_unit_id": "observation:evidence_csv:0003",
+          "date_state": "CURRENT",
+          "decision_basis": "METHODOLOGY",
+          "digest": "c9b30f57",
+          "event_dates": [
+            "2026-02-20"
+          ],
+          "evidence_types": [
+            "board_minutes"
+          ],
+          "normalized_statuses": [
+            "APPROVED"
+          ],
+          "obligation_id": "OBL-003",
+          "observation_ids": [
+            "evidence_csv:0003"
+          ],
+          "qualifies_for_met": false,
+          "reasons": [
+            "All supplied event dates are current under the methodology.",
+            "Data quality EVIDENCE_TYPE_MISMATCH: Evidence type 'board_minutes' does not match the required evidence type(s) for OBL-003: ['risk_appetite_statement'].",
+            "Effective normalized status is APPROVED.",
+            "Evidence type does not match the obligation's required type.",
+            "The unit supports PARTIAL under the supplied methodology."
+          ],
+          "reconciliation_type": null,
+          "review_required": true,
+          "source_datasets": [
+            "evidence_csv"
+          ],
+          "source_record_ids": [
+            "EV-0003"
+          ],
+          "status_state": "APPROVED",
+          "supports_partial": true,
+          "type_matches": false
+        },
+        {
+          "assessment_unit_id": "observation:registry:0008",
+          "date_state": "CURRENT",
+          "decision_basis": "METHODOLOGY",
+          "digest": "9911ce40",
+          "event_dates": [
+            "2026-07-14"
+          ],
+          "evidence_types": [
+            "risk_appetite_statement"
+          ],
+          "normalized_statuses": [
+            "DRAFT"
+          ],
+          "obligation_id": "OBL-003",
+          "observation_ids": [
+            "registry:0008"
+          ],
+          "qualifies_for_met": false,
+          "reasons": [
+            "All supplied event dates are current under the methodology.",
+            "Effective normalized status is DRAFT.",
+            "Evidence type matches the obligation's required type.",
+            "The unit supports PARTIAL under the supplied methodology."
+          ],
+          "reconciliation_type": null,
+          "review_required": false,
+          "source_datasets": [
+            "registry"
+          ],
+          "source_record_ids": [
+            "AST-008"
+          ],
+          "status_state": "DRAFT",
+          "supports_partial": true,
+          "type_matches": true
+        }
+      ],
+      "obligation_id": "OBL-003",
+      "partial_unit_ids": [
+        "observation:evidence_csv:0003",
+        "observation:registry:0008"
+      ],
+      "qualifying_unit_ids": [],
+      "reason": "No evidence unit qualifies for MET; the following units support PARTIAL: observation:evidence_csv:0003, observation:registry:0008.",
+      "review_required": true,
+      "status": "PARTIAL"
+    },
+    {
+      "dimension": "MRC",
+      "evidence_evaluations": [
+        {
+          "assessment_unit_id": "artefact:1b8ec440",
+          "date_state": "CURRENT",
+          "decision_basis": "METHODOLOGY",
+          "digest": "1b8ec440",
+          "event_dates": [
+            "2026-07-11"
+          ],
+          "evidence_types": [
+            "system_inventory"
+          ],
+          "normalized_statuses": [
+            "APPROVED"
+          ],
+          "obligation_id": "OBL-004",
+          "observation_ids": [
+            "evidence_csv:0004",
+            "registry:0001"
+          ],
+          "qualifies_for_met": true,
+          "reasons": [
+            "All supplied event dates are current under the methodology.",
+            "Effective normalized status is APPROVED.",
+            "Evidence type matches the obligation's required type.",
+            "Reconciliation CONSISTENT_DUPLICATE: Multiple source observations share this digest and agree on important assessment metadata. Treat them as one artefact for assessment without removing their source provenance.",
+            "The unit is approved, current, type-matching, and free of core status or metadata conflicts."
+          ],
+          "reconciliation_type": "CONSISTENT_DUPLICATE",
+          "review_required": false,
+          "source_datasets": [
+            "evidence_csv",
+            "registry"
+          ],
+          "source_record_ids": [
+            "AST-001",
+            "EV-0004"
+          ],
+          "status_state": "APPROVED",
+          "supports_partial": false,
+          "type_matches": true
+        },
+        {
+          "assessment_unit_id": "observation:evidence_csv:0005",
+          "date_state": "CURRENT",
+          "decision_basis": "METHODOLOGY",
+          "digest": "55aa9021",
+          "event_dates": [
+            "2025-11-02"
+          ],
+          "evidence_types": [
+            "system_inventory"
+          ],
+          "normalized_statuses": [
+            "APPROVED"
+          ],
+          "obligation_id": "OBL-004",
+          "observation_ids": [
+            "evidence_csv:0005"
+          ],
+          "qualifies_for_met": true,
+          "reasons": [
+            "All supplied event dates are current under the methodology.",
+            "Effective normalized status is APPROVED.",
+            "Evidence type matches the obligation's required type.",
+            "The unit is approved, current, type-matching, and free of core status or metadata conflicts."
+          ],
+          "reconciliation_type": null,
+          "review_required": false,
+          "source_datasets": [
+            "evidence_csv"
+          ],
+          "source_record_ids": [
+            "EV-0005"
+          ],
+          "status_state": "APPROVED",
+          "supports_partial": false,
+          "type_matches": true
+        },
+        {
+          "assessment_unit_id": "observation:registry:0006",
+          "date_state": "CURRENT",
+          "decision_basis": "METHODOLOGY",
+          "digest": "72ff3d19",
+          "event_dates": [
+            "2026-06-30"
+          ],
+          "evidence_types": [
+            "system_inventory"
+          ],
+          "normalized_statuses": [
+            "APPROVED"
+          ],
+          "obligation_id": "OBL-004",
+          "observation_ids": [
+            "registry:0006"
+          ],
+          "qualifies_for_met": true,
+          "reasons": [
+            "All supplied event dates are current under the methodology.",
+            "Effective normalized status is APPROVED.",
+            "Evidence type matches the obligation's required type.",
+            "The unit is approved, current, type-matching, and free of core status or metadata conflicts."
+          ],
+          "reconciliation_type": null,
+          "review_required": false,
+          "source_datasets": [
+            "registry"
+          ],
+          "source_record_ids": [
+            "AST-006"
+          ],
+          "status_state": "APPROVED",
+          "supports_partial": false,
+          "type_matches": true
+        }
+      ],
+      "obligation_id": "OBL-004",
+      "partial_unit_ids": [],
+      "qualifying_unit_ids": [
+        "artefact:1b8ec440",
+        "observation:evidence_csv:0005",
+        "observation:registry:0006"
+      ],
+      "reason": "At least one logical evidence unit is approved, current, type-matching, and eligible for MET: artefact:1b8ec440, observation:evidence_csv:0005, observation:registry:0006.",
+      "review_required": false,
+      "status": "MET"
+    },
+    {
+      "dimension": "MRC",
+      "evidence_evaluations": [
+        {
+          "assessment_unit_id": "artefact:3f77b1c0",
+          "date_state": "CURRENT",
+          "decision_basis": "METHODOLOGY",
+          "digest": "3f77b1c0",
+          "event_dates": [
+            "2026-06-01"
+          ],
+          "evidence_types": [
+            "risk_assessment"
+          ],
+          "normalized_statuses": [
+            "DRAFT"
+          ],
+          "obligation_id": "OBL-005",
+          "observation_ids": [
+            "evidence_csv:0006",
+            "registry:0002"
+          ],
+          "qualifies_for_met": false,
+          "reasons": [
+            "All supplied event dates are current under the methodology.",
+            "Effective normalized status is DRAFT.",
+            "Evidence type matches the obligation's required type.",
+            "Reconciliation CONSISTENT_DUPLICATE: Multiple source observations share this digest and agree on important assessment metadata. Treat them as one artefact for assessment without removing their source provenance.",
+            "The unit supports PARTIAL under the supplied methodology."
+          ],
+          "reconciliation_type": "CONSISTENT_DUPLICATE",
+          "review_required": false,
+          "source_datasets": [
+            "evidence_csv",
+            "registry"
+          ],
+          "source_record_ids": [
+            "AST-002",
+            "EV-0006"
+          ],
+          "status_state": "DRAFT",
+          "supports_partial": true,
+          "type_matches": true
+        },
+        {
+          "assessment_unit_id": "observation:evidence_csv:0007",
+          "date_state": "FUTURE_DATE",
+          "decision_basis": "ENGINEERING_POLICY",
+          "digest": "8c21de93",
+          "event_dates": [
+            "2026-09-30"
+          ],
+          "evidence_types": [
+            "risk_assessment"
+          ],
+          "normalized_statuses": [
+            "APPROVED"
+          ],
+          "obligation_id": "OBL-005",
+          "observation_ids": [
+            "evidence_csv:0007"
+          ],
+          "qualifies_for_met": false,
+          "reasons": [
+            "Data quality FUTURE_DATE: Event date 2026-09-30 is after the assessment as-at date 2026-08-01.",
+            "Effective normalized status is APPROVED.",
+            "Evidence type matches the obligation's required type.",
+            "The event date is after the methodology as-at date and cannot establish the position at that date.",
+            "The unit supports PARTIAL under a conservative engineering policy for a condition not explicitly resolved by the methodology."
+          ],
+          "reconciliation_type": null,
+          "review_required": true,
+          "source_datasets": [
+            "evidence_csv"
+          ],
+          "source_record_ids": [
+            "EV-0007"
+          ],
+          "status_state": "APPROVED",
+          "supports_partial": true,
+          "type_matches": true
+        },
+        {
+          "assessment_unit_id": "observation:registry:0003",
+          "date_state": "MISSING_DATE",
+          "decision_basis": "ENGINEERING_POLICY",
+          "digest": "b4429e70",
+          "event_dates": [],
+          "evidence_types": [
+            "risk_assessment"
+          ],
+          "normalized_statuses": [
+            "APPROVED"
+          ],
+          "obligation_id": "OBL-005",
+          "observation_ids": [
+            "registry:0003"
+          ],
+          "qualifies_for_met": false,
+          "reasons": [
+            "At least one event date is missing, so currency cannot be established.",
+            "Data quality MISSING_FIELD: Required or important field 'event_date' is missing.",
+            "Effective normalized status is APPROVED.",
+            "Evidence type matches the obligation's required type.",
+            "The unit supports PARTIAL under a conservative engineering policy for a condition not explicitly resolved by the methodology."
+          ],
+          "reconciliation_type": null,
+          "review_required": true,
+          "source_datasets": [
+            "registry"
+          ],
+          "source_record_ids": [
+            "AST-003"
+          ],
+          "status_state": "APPROVED",
+          "supports_partial": true,
+          "type_matches": true
+        },
+        {
+          "assessment_unit_id": "observation:servicedesk:0007",
+          "date_state": "CURRENT",
+          "decision_basis": "METHODOLOGY",
+          "digest": "77e0aa31",
+          "event_dates": [
+            "2026-07-28"
+          ],
+          "evidence_types": [
+            "change_record"
+          ],
+          "normalized_statuses": [
+            "APPROVED"
+          ],
+          "obligation_id": "OBL-005",
+          "observation_ids": [
+            "servicedesk:0007"
+          ],
+          "qualifies_for_met": false,
+          "reasons": [
+            "All supplied event dates are current under the methodology.",
+            "Data quality EVIDENCE_TYPE_MISMATCH: Evidence type 'change_record' does not match the required evidence type(s) for OBL-005: ['risk_assessment'].",
+            "Effective normalized status is APPROVED.",
+            "Evidence type does not match the obligation's required type.",
+            "The unit supports PARTIAL under the supplied methodology."
+          ],
+          "reconciliation_type": null,
+          "review_required": true,
+          "source_datasets": [
+            "servicedesk"
+          ],
+          "source_record_ids": [
+            "SD-93118"
+          ],
+          "status_state": "APPROVED",
+          "supports_partial": true,
+          "type_matches": false
+        }
+      ],
+      "obligation_id": "OBL-005",
+      "partial_unit_ids": [
+        "artefact:3f77b1c0",
+        "observation:evidence_csv:0007",
+        "observation:registry:0003",
+        "observation:servicedesk:0007"
+      ],
+      "qualifying_unit_ids": [],
+      "reason": "No evidence unit qualifies for MET; the following units support PARTIAL: artefact:3f77b1c0, observation:evidence_csv:0007, observation:registry:0003, observation:servicedesk:0007.",
+      "review_required": true,
+      "status": "PARTIAL"
+    },
+    {
+      "dimension": "MRC",
+      "evidence_evaluations": [
+        {
+          "assessment_unit_id": "artefact:2ed7ff10",
+          "date_state": "CURRENT",
+          "decision_basis": "METHODOLOGY",
+          "digest": "2ed7ff10",
+          "event_dates": [
+            "2026-01-19"
+          ],
+          "evidence_types": [
+            "vendor_due_diligence"
+          ],
+          "normalized_statuses": [
+            "APPROVED"
+          ],
+          "obligation_id": "OBL-006",
+          "observation_ids": [
+            "evidence_csv:0008",
+            "registry:0004"
+          ],
+          "qualifies_for_met": true,
+          "reasons": [
+            "All supplied event dates are current under the methodology.",
+            "Effective normalized status is APPROVED.",
+            "Evidence type matches the obligation's required type.",
+            "Reconciliation CONSISTENT_DUPLICATE: Multiple source observations share this digest and agree on important assessment metadata. Treat them as one artefact for assessment without removing their source provenance.",
+            "The unit is approved, current, type-matching, and free of core status or metadata conflicts."
+          ],
+          "reconciliation_type": "CONSISTENT_DUPLICATE",
+          "review_required": false,
+          "source_datasets": [
+            "evidence_csv",
+            "registry"
+          ],
+          "source_record_ids": [
+            "AST-004",
+            "EV-0008"
+          ],
+          "status_state": "APPROVED",
+          "supports_partial": false,
+          "type_matches": true
+        },
+        {
+          "assessment_unit_id": "observation:evidence_csv:0009",
+          "date_state": "STALE",
+          "decision_basis": "METHODOLOGY",
+          "digest": "9a04c7be",
+          "event_dates": [
+            "2023-08-30"
+          ],
+          "evidence_types": [
+            "vendor_due_diligence"
+          ],
+          "normalized_statuses": [
+            "APPROVED"
+          ],
+          "obligation_id": "OBL-006",
+          "observation_ids": [
+            "evidence_csv:0009"
+          ],
+          "qualifies_for_met": false,
+          "reasons": [
+            "All supplied event dates exceed the methodology staleness threshold.",
+            "Effective normalized status is APPROVED.",
+            "Evidence type matches the obligation's required type.",
+            "The unit supports PARTIAL under the supplied methodology."
+          ],
+          "reconciliation_type": null,
+          "review_required": false,
+          "source_datasets": [
+            "evidence_csv"
+          ],
+          "source_record_ids": [
+            "EV-0009"
+          ],
+          "status_state": "APPROVED",
+          "supports_partial": true,
+          "type_matches": true
+        },
+        {
+          "assessment_unit_id": "observation:registry:0005",
+          "date_state": "CURRENT",
+          "decision_basis": "METHODOLOGY",
+          "digest": "c1180fd5",
+          "event_dates": [
+            "2026-04-03"
+          ],
+          "evidence_types": [
+            "vendor_due_diligence"
+          ],
+          "normalized_statuses": [
+            "APPROVED"
+          ],
+          "obligation_id": "OBL-006",
+          "observation_ids": [
+            "registry:0005"
+          ],
+          "qualifies_for_met": true,
+          "reasons": [
+            "All supplied event dates are current under the methodology.",
+            "Effective normalized status is APPROVED.",
+            "Evidence type matches the obligation's required type.",
+            "The unit is approved, current, type-matching, and free of core status or metadata conflicts."
+          ],
+          "reconciliation_type": null,
+          "review_required": false,
+          "source_datasets": [
+            "registry"
+          ],
+          "source_record_ids": [
+            "AST-005"
+          ],
+          "status_state": "APPROVED",
+          "supports_partial": false,
+          "type_matches": true
+        }
+      ],
+      "obligation_id": "OBL-006",
+      "partial_unit_ids": [
+        "observation:evidence_csv:0009"
+      ],
+      "qualifying_unit_ids": [
+        "artefact:2ed7ff10",
+        "observation:registry:0005"
+      ],
+      "reason": "At least one logical evidence unit is approved, current, type-matching, and eligible for MET: artefact:2ed7ff10, observation:registry:0005.",
+      "review_required": false,
+      "status": "MET"
+    },
+    {
+      "dimension": "RCP",
+      "evidence_evaluations": [
+        {
+          "assessment_unit_id": "artefact:6b1d0e44",
+          "date_state": "CURRENT",
+          "decision_basis": "METHODOLOGY",
+          "digest": "6b1d0e44",
+          "event_dates": [
+            "2026-04-08"
+          ],
+          "evidence_types": [
+            "compliance_mapping"
+          ],
+          "normalized_statuses": [
+            "APPROVED"
+          ],
+          "obligation_id": "OBL-007",
+          "observation_ids": [
+            "evidence_csv:0010",
+            "evidence_csv:0025"
+          ],
+          "qualifies_for_met": true,
+          "reasons": [
+            "All supplied event dates are current under the methodology.",
+            "Effective normalized status is APPROVED.",
+            "Evidence type matches the obligation's required type.",
+            "Reconciliation METADATA_INCONSISTENCY: Observations sharing this digest disagree on metadata fields: title. No metadata value was selected as authoritative.",
+            "The unit is approved, current, type-matching, and free of core status or metadata conflicts."
+          ],
+          "reconciliation_type": "METADATA_INCONSISTENCY",
+          "review_required": true,
+          "source_datasets": [
+            "evidence_csv"
+          ],
+          "source_record_ids": [
+            "EV-0010",
+            "EV-0024"
+          ],
+          "status_state": "APPROVED",
+          "supports_partial": false,
+          "type_matches": true
+        }
+      ],
+      "obligation_id": "OBL-007",
+      "partial_unit_ids": [],
+      "qualifying_unit_ids": [
+        "artefact:6b1d0e44"
+      ],
+      "reason": "At least one logical evidence unit is approved, current, type-matching, and eligible for MET: artefact:6b1d0e44.",
+      "review_required": true,
+      "status": "MET"
+    },
+    {
+      "dimension": "RCP",
+      "evidence_evaluations": [
+        {
+          "assessment_unit_id": "artefact:0cc48a17",
+          "date_state": "CURRENT",
+          "decision_basis": "ENGINEERING_POLICY",
+          "digest": "0cc48a17",
+          "event_dates": [
+            "2026-05-22"
+          ],
+          "evidence_types": [
+            "gap_analysis"
+          ],
+          "normalized_statuses": [
+            "APPROVED",
+            "DRAFT"
+          ],
+          "obligation_id": "OBL-008",
+          "observation_ids": [
+            "evidence_csv:0011",
+            "evidence_csv:0012"
+          ],
+          "qualifies_for_met": false,
+          "reasons": [
+            "All supplied event dates are current under the methodology.",
+            "Evidence type matches the obligation's required type.",
+            "Normalized statuses conflict; no status was selected as authoritative.",
+            "Reconciliation CONTRADICTORY_STATUS: Observations sharing this digest disagree on normalized status. No source precedence or reliable status sequencing rule is defined.",
+            "The unit supports PARTIAL under a conservative engineering policy for a condition not explicitly resolved by the methodology."
+          ],
+          "reconciliation_type": "CONTRADICTORY_STATUS",
+          "review_required": true,
+          "source_datasets": [
+            "evidence_csv"
+          ],
+          "source_record_ids": [
+            "EV-0011",
+            "EV-0012"
+          ],
+          "status_state": "CONFLICT",
+          "supports_partial": true,
+          "type_matches": true
+        }
+      ],
+      "obligation_id": "OBL-008",
+      "partial_unit_ids": [
+        "artefact:0cc48a17"
+      ],
+      "qualifying_unit_ids": [],
+      "reason": "No evidence unit qualifies for MET; the following units support PARTIAL: artefact:0cc48a17.",
+      "review_required": true,
+      "status": "PARTIAL"
+    },
+    {
+      "dimension": "OPI",
+      "evidence_evaluations": [
+        {
+          "assessment_unit_id": "artefact:44f0b9c2",
+          "date_state": "MISSING_DATE",
+          "decision_basis": "ENGINEERING_POLICY",
+          "digest": "44f0b9c2",
+          "event_dates": [
+            "2025-10-05"
+          ],
+          "evidence_types": [
+            "incident_procedure"
+          ],
+          "normalized_statuses": [
+            "APPROVED",
+            "AWAITING_SIGNOFF"
+          ],
+          "obligation_id": "OBL-009",
+          "observation_ids": [
+            "evidence_csv:0013",
+            "servicedesk:0006"
+          ],
+          "qualifies_for_met": false,
+          "reasons": [
+            "At least one event date is missing, so currency cannot be established.",
+            "Data quality MISSING_FIELD: Required or important field 'event_date' is missing.",
+            "Evidence type matches the obligation's required type.",
+            "Normalized statuses conflict; no status was selected as authoritative.",
+            "Reconciliation STATUS_AND_METADATA_CONFLICT: Observations sharing this digest disagree on normalized status and metadata fields: title. No observation was selected as authoritative.",
+            "The unit supports PARTIAL under a conservative engineering policy for a condition not explicitly resolved by the methodology."
+          ],
+          "reconciliation_type": "STATUS_AND_METADATA_CONFLICT",
+          "review_required": true,
+          "source_datasets": [
+            "evidence_csv",
+            "servicedesk"
+          ],
+          "source_record_ids": [
+            "EV-0013",
+            "SD-89004"
+          ],
+          "status_state": "CONFLICT",
+          "supports_partial": true,
+          "type_matches": true
+        },
+        {
+          "assessment_unit_id": "artefact:cd8801f4",
+          "date_state": "CURRENT",
+          "decision_basis": "METHODOLOGY",
+          "digest": "cd8801f4",
+          "event_dates": [
+            "2026-07-25"
+          ],
+          "evidence_types": [
+            "incident_procedure"
+          ],
+          "normalized_statuses": [
+            "DRAFT"
+          ],
+          "obligation_id": "OBL-009",
+          "observation_ids": [
+            "evidence_csv:0022",
+            "servicedesk:0003"
+          ],
+          "qualifies_for_met": false,
+          "reasons": [
+            "All supplied event dates are current under the methodology.",
+            "Effective normalized status is DRAFT.",
+            "Evidence type matches the obligation's required type.",
+            "Reconciliation CONSISTENT_DUPLICATE: Multiple source observations share this digest and agree on important assessment metadata. Treat them as one artefact for assessment without removing their source provenance.",
+            "The unit supports PARTIAL under the supplied methodology."
+          ],
+          "reconciliation_type": "CONSISTENT_DUPLICATE",
+          "review_required": false,
+          "source_datasets": [
+            "evidence_csv",
+            "servicedesk"
+          ],
+          "source_record_ids": [
+            "EV-0021",
+            "SD-90455"
+          ],
+          "status_state": "DRAFT",
+          "supports_partial": true,
+          "type_matches": true
+        }
+      ],
+      "obligation_id": "OBL-009",
+      "partial_unit_ids": [
+        "artefact:44f0b9c2",
+        "artefact:cd8801f4"
+      ],
+      "qualifying_unit_ids": [],
+      "reason": "No evidence unit qualifies for MET; the following units support PARTIAL: artefact:44f0b9c2, artefact:cd8801f4.",
+      "review_required": true,
+      "status": "PARTIAL"
+    },
+    {
+      "dimension": "OPI",
+      "evidence_evaluations": [
+        {
+          "assessment_unit_id": "artefact:aa19c73d",
+          "date_state": "CURRENT",
+          "decision_basis": "METHODOLOGY",
+          "digest": "aa19c73d",
+          "event_dates": [
+            "2026-03-31"
+          ],
+          "evidence_types": [
+            "access_control_log"
+          ],
+          "normalized_statuses": [
+            "APPROVED"
+          ],
+          "obligation_id": "OBL-010",
+          "observation_ids": [
+            "evidence_csv:0020",
+            "registry:0007"
+          ],
+          "qualifies_for_met": true,
+          "reasons": [
+            "All supplied event dates are current under the methodology.",
+            "Data quality DUPLICATE_SOURCE_RECORD_ID: Source record ID 'EV-0014' occurs more than once in evidence_csv.",
+            "Effective normalized status is APPROVED.",
+            "Evidence type matches the obligation's required type.",
+            "Reconciliation CONSISTENT_DUPLICATE: Multiple source observations share this digest and agree on important assessment metadata. Treat them as one artefact for assessment without removing their source provenance.",
+            "The unit is approved, current, type-matching, and free of core status or metadata conflicts."
+          ],
+          "reconciliation_type": "CONSISTENT_DUPLICATE",
+          "review_required": true,
+          "source_datasets": [
+            "evidence_csv",
+            "registry"
+          ],
+          "source_record_ids": [
+            "AST-007",
+            "EV-0014"
+          ],
+          "status_state": "APPROVED",
+          "supports_partial": false,
+          "type_matches": true
+        },
+        {
+          "assessment_unit_id": "artefact:d2b7e015",
+          "date_state": "CURRENT",
+          "decision_basis": "METHODOLOGY",
+          "digest": "d2b7e015",
+          "event_dates": [
+            "2026-06-30"
+          ],
+          "evidence_types": [
+            "access_control_log"
+          ],
+          "normalized_statuses": [
+            "APPROVED"
+          ],
+          "obligation_id": "OBL-010",
+          "observation_ids": [
+            "evidence_csv:0014",
+            "servicedesk:0005"
+          ],
+          "qualifies_for_met": true,
+          "reasons": [
+            "All supplied event dates are current under the methodology.",
+            "Data quality DUPLICATE_SOURCE_RECORD_ID: Source record ID 'EV-0014' occurs more than once in evidence_csv.",
+            "Effective normalized status is APPROVED.",
+            "Evidence type matches the obligation's required type.",
+            "Reconciliation CONSISTENT_DUPLICATE: Multiple source observations share this digest and agree on important assessment metadata. Treat them as one artefact for assessment without removing their source provenance.",
+            "The unit is approved, current, type-matching, and free of core status or metadata conflicts."
+          ],
+          "reconciliation_type": "CONSISTENT_DUPLICATE",
+          "review_required": true,
+          "source_datasets": [
+            "evidence_csv",
+            "servicedesk"
+          ],
+          "source_record_ids": [
+            "EV-0014",
+            "SD-92310"
+          ],
+          "status_state": "APPROVED",
+          "supports_partial": false,
+          "type_matches": true
+        }
+      ],
+      "obligation_id": "OBL-010",
+      "partial_unit_ids": [],
+      "qualifying_unit_ids": [
+        "artefact:aa19c73d",
+        "artefact:d2b7e015"
+      ],
+      "reason": "At least one logical evidence unit is approved, current, type-matching, and eligible for MET: artefact:aa19c73d, artefact:d2b7e015.",
+      "review_required": true,
+      "status": "MET"
+    },
+    {
+      "dimension": "OPI",
+      "evidence_evaluations": [
+        {
+          "assessment_unit_id": "artefact:b0937fc5",
+          "date_state": "CURRENT",
+          "decision_basis": "METHODOLOGY",
+          "digest": "b0937fc5",
+          "event_dates": [
+            "2026-07-02"
+          ],
+          "evidence_types": [
+            "change_record"
+          ],
+          "normalized_statuses": [
+            "APPROVED"
+          ],
+          "obligation_id": "OBL-011",
+          "observation_ids": [
+            "evidence_csv:0016",
+            "servicedesk:0002"
+          ],
+          "qualifies_for_met": true,
+          "reasons": [
+            "All supplied event dates are current under the methodology.",
+            "Effective normalized status is APPROVED.",
+            "Evidence type matches the obligation's required type.",
+            "Reconciliation CONSISTENT_DUPLICATE: Multiple source observations share this digest and agree on important assessment metadata. Treat them as one artefact for assessment without removing their source provenance.",
+            "The unit is approved, current, type-matching, and free of core status or metadata conflicts."
+          ],
+          "reconciliation_type": "CONSISTENT_DUPLICATE",
+          "review_required": false,
+          "source_datasets": [
+            "evidence_csv",
+            "servicedesk"
+          ],
+          "source_record_ids": [
+            "EV-0016",
+            "SD-91077"
+          ],
+          "status_state": "APPROVED",
+          "supports_partial": false,
+          "type_matches": true
+        },
+        {
+          "assessment_unit_id": "artefact:e71c3a08",
+          "date_state": "CURRENT",
+          "decision_basis": "METHODOLOGY",
+          "digest": "e71c3a08",
+          "event_dates": [
+            "2026-02-11"
+          ],
+          "evidence_types": [
+            "change_record"
+          ],
+          "normalized_statuses": [
+            "APPROVED"
+          ],
+          "obligation_id": "OBL-011",
+          "observation_ids": [
+            "evidence_csv:0015",
+            "servicedesk:0001"
+          ],
+          "qualifies_for_met": true,
+          "reasons": [
+            "All supplied event dates are current under the methodology.",
+            "Effective normalized status is APPROVED.",
+            "Evidence type matches the obligation's required type.",
+            "Reconciliation CONSISTENT_DUPLICATE: Multiple source observations share this digest and agree on important assessment metadata. Treat them as one artefact for assessment without removing their source provenance.",
+            "The unit is approved, current, type-matching, and free of core status or metadata conflicts."
+          ],
+          "reconciliation_type": "CONSISTENT_DUPLICATE",
+          "review_required": false,
+          "source_datasets": [
+            "evidence_csv",
+            "servicedesk"
+          ],
+          "source_record_ids": [
+            "EV-0015",
+            "SD-88214"
+          ],
+          "status_state": "APPROVED",
+          "supports_partial": false,
+          "type_matches": true
+        },
+        {
+          "assessment_unit_id": "observation:servicedesk:0004",
+          "date_state": "CURRENT",
+          "decision_basis": "ENGINEERING_POLICY",
+          "digest": "40ca7b12",
+          "event_dates": [
+            "2025-12-19"
+          ],
+          "evidence_types": [
+            "change_record"
+          ],
+          "normalized_statuses": [
+            "APPROVED_RETROSPECTIVELY"
+          ],
+          "obligation_id": "OBL-011",
+          "observation_ids": [
+            "servicedesk:0004"
+          ],
+          "qualifies_for_met": false,
+          "reasons": [
+            "All supplied event dates are current under the methodology.",
+            "Evidence type matches the obligation's required type.",
+            "Retrospective approval is not equivalent to ordinary approval; release timing requires institutional confirmation.",
+            "The unit supports PARTIAL under a conservative engineering policy for a condition not explicitly resolved by the methodology."
+          ],
+          "reconciliation_type": null,
+          "review_required": true,
+          "source_datasets": [
+            "servicedesk"
+          ],
+          "source_record_ids": [
+            "SD-86300"
+          ],
+          "status_state": "APPROVED_RETROSPECTIVELY",
+          "supports_partial": true,
+          "type_matches": true
+        }
+      ],
+      "obligation_id": "OBL-011",
+      "partial_unit_ids": [
+        "observation:servicedesk:0004"
+      ],
+      "qualifying_unit_ids": [
+        "artefact:b0937fc5",
+        "artefact:e71c3a08"
+      ],
+      "reason": "At least one logical evidence unit is approved, current, type-matching, and eligible for MET: artefact:b0937fc5, artefact:e71c3a08.",
+      "review_required": true,
+      "status": "MET"
+    },
+    {
+      "dimension": "AEQ",
+      "evidence_evaluations": [
+        {
+          "assessment_unit_id": "artefact:19ba4e77",
+          "date_state": "CURRENT",
+          "decision_basis": "METHODOLOGY",
+          "digest": "19ba4e77",
+          "event_dates": [
+            "2026-06-17"
+          ],
+          "evidence_types": [
+            "retention_record"
+          ],
+          "normalized_statuses": [
+            "APPROVED"
+          ],
+          "obligation_id": "OBL-012",
+          "observation_ids": [
+            "evidence_csv:0024",
+            "registry:0009"
+          ],
+          "qualifies_for_met": true,
+          "reasons": [
+            "All supplied event dates are current under the methodology.",
+            "Effective normalized status is APPROVED.",
+            "Evidence type matches the obligation's required type.",
+            "Reconciliation CONSISTENT_DUPLICATE: Multiple source observations share this digest and agree on important assessment metadata. Treat them as one artefact for assessment without removing their source provenance.",
+            "The unit is approved, current, type-matching, and free of core status or metadata conflicts."
+          ],
+          "reconciliation_type": "CONSISTENT_DUPLICATE",
+          "review_required": false,
+          "source_datasets": [
+            "evidence_csv",
+            "registry"
+          ],
+          "source_record_ids": [
+            "AST-009",
+            "EV-0023"
+          ],
+          "status_state": "APPROVED",
+          "supports_partial": false,
+          "type_matches": true
+        },
+        {
+          "assessment_unit_id": "observation:evidence_csv:0017",
+          "date_state": "STALE",
+          "decision_basis": "METHODOLOGY",
+          "digest": "fa2e8801",
+          "event_dates": [
+            "2022-12-01"
+          ],
+          "evidence_types": [
+            "retention_record"
+          ],
+          "normalized_statuses": [
+            "APPROVED"
+          ],
+          "obligation_id": "OBL-012",
+          "observation_ids": [
+            "evidence_csv:0017"
+          ],
+          "qualifies_for_met": false,
+          "reasons": [
+            "All supplied event dates exceed the methodology staleness threshold.",
+            "Effective normalized status is APPROVED.",
+            "Evidence type matches the obligation's required type.",
+            "The unit supports PARTIAL under the supplied methodology."
+          ],
+          "reconciliation_type": null,
+          "review_required": false,
+          "source_datasets": [
+            "evidence_csv"
+          ],
+          "source_record_ids": [
+            "EV-0017"
+          ],
+          "status_state": "APPROVED",
+          "supports_partial": true,
+          "type_matches": true
+        }
+      ],
+      "obligation_id": "OBL-012",
+      "partial_unit_ids": [
+        "observation:evidence_csv:0017"
+      ],
+      "qualifying_unit_ids": [
+        "artefact:19ba4e77"
+      ],
+      "reason": "At least one logical evidence unit is approved, current, type-matching, and eligible for MET: artefact:19ba4e77.",
+      "review_required": false,
+      "status": "MET"
+    }
+  ],
+  "reconciliation_groups": [
+    {
+      "assessment_handling": "REVIEW_BEFORE_ASSESSMENT",
+      "digest": "0cc48a17",
+      "evidence_types": [
+        "gap_analysis"
+      ],
+      "group_id": "digest:0cc48a17",
+      "group_type": "CONTRADICTORY_STATUS",
+      "message": "Observations sharing this digest disagree on normalized status. No source precedence or reliable status sequencing rule is defined.",
+      "normalized_statuses": [
+        "APPROVED",
+        "DRAFT"
+      ],
+      "obligation_ids": [
+        "OBL-008"
+      ],
+      "observation_ids": [
+        "evidence_csv:0011",
+        "evidence_csv:0012"
+      ],
+      "review_required": true,
+      "source_datasets": [
+        "evidence_csv"
+      ],
+      "source_record_ids": [
+        "EV-0011",
+        "EV-0012"
+      ],
+      "titles": [
+        "AI regulatory gap analysis v1"
+      ],
+      "versions": [
+        "1.0"
+      ]
+    },
+    {
+      "assessment_handling": "COUNT_AS_ONE_ARTEFACT",
+      "digest": "19ba4e77",
+      "evidence_types": [
+        "retention_record"
+      ],
+      "group_id": "digest:19ba4e77",
+      "group_type": "CONSISTENT_DUPLICATE",
+      "message": "Multiple source observations share this digest and agree on important assessment metadata. Treat them as one artefact for assessment without removing their source provenance.",
+      "normalized_statuses": [
+        "APPROVED"
+      ],
+      "obligation_ids": [
+        "OBL-012"
+      ],
+      "observation_ids": [
+        "evidence_csv:0024",
+        "registry:0009"
+      ],
+      "review_required": false,
+      "source_datasets": [
+        "evidence_csv",
+        "registry"
+      ],
+      "source_record_ids": [
+        "AST-009",
+        "EV-0023"
+      ],
+      "titles": [
+        "Evidence retention and retrieval test report"
+      ],
+      "versions": [
+        "1.0"
+      ]
+    },
+    {
+      "assessment_handling": "COUNT_AS_ONE_ARTEFACT",
+      "digest": "1b8ec440",
+      "evidence_types": [
+        "system_inventory"
+      ],
+      "group_id": "digest:1b8ec440",
+      "group_type": "CONSISTENT_DUPLICATE",
+      "message": "Multiple source observations share this digest and agree on important assessment metadata. Treat them as one artefact for assessment without removing their source provenance.",
+      "normalized_statuses": [
+        "APPROVED"
+      ],
+      "obligation_ids": [
+        "OBL-004"
+      ],
+      "observation_ids": [
+        "evidence_csv:0004",
+        "registry:0001"
+      ],
+      "review_required": false,
+      "source_datasets": [
+        "evidence_csv",
+        "registry"
+      ],
+      "source_record_ids": [
+        "AST-001",
+        "EV-0004"
+      ],
+      "titles": [
+        "AI Systems Register (IT-maintained)"
+      ],
+      "versions": [
+        "4.3"
+      ]
+    },
+    {
+      "assessment_handling": "COUNT_AS_ONE_ARTEFACT",
+      "digest": "2ed7ff10",
+      "evidence_types": [
+        "vendor_due_diligence"
+      ],
+      "group_id": "digest:2ed7ff10",
+      "group_type": "CONSISTENT_DUPLICATE",
+      "message": "Multiple source observations share this digest and agree on important assessment metadata. Treat them as one artefact for assessment without removing their source provenance.",
+      "normalized_statuses": [
+        "APPROVED"
+      ],
+      "obligation_ids": [
+        "OBL-006"
+      ],
+      "observation_ids": [
+        "evidence_csv:0008",
+        "registry:0004"
+      ],
+      "review_required": false,
+      "source_datasets": [
+        "evidence_csv",
+        "registry"
+      ],
+      "source_record_ids": [
+        "AST-004",
+        "EV-0008"
+      ],
+      "titles": [
+        "Vendor DD pack: Northwind Analytics"
+      ],
+      "versions": [
+        "1.2"
+      ]
+    },
+    {
+      "assessment_handling": "COUNT_AS_ONE_ARTEFACT",
+      "digest": "3f77b1c0",
+      "evidence_types": [
+        "risk_assessment"
+      ],
+      "group_id": "digest:3f77b1c0",
+      "group_type": "CONSISTENT_DUPLICATE",
+      "message": "Multiple source observations share this digest and agree on important assessment metadata. Treat them as one artefact for assessment without removing their source provenance.",
+      "normalized_statuses": [
+        "DRAFT"
+      ],
+      "obligation_ids": [
+        "OBL-005"
+      ],
+      "observation_ids": [
+        "evidence_csv:0006",
+        "registry:0002"
+      ],
+      "review_required": false,
+      "source_datasets": [
+        "evidence_csv",
+        "registry"
+      ],
+      "source_record_ids": [
+        "AST-002",
+        "EV-0006"
+      ],
+      "titles": [
+        "Pre-deployment assessment: Portfolio Rebalance Suggester"
+      ],
+      "versions": [
+        "0.4"
+      ]
+    },
+    {
+      "assessment_handling": "REVIEW_BEFORE_ASSESSMENT",
+      "digest": "44f0b9c2",
+      "evidence_types": [
+        "incident_procedure"
+      ],
+      "group_id": "digest:44f0b9c2",
+      "group_type": "STATUS_AND_METADATA_CONFLICT",
+      "message": "Observations sharing this digest disagree on normalized status and metadata fields: title. No observation was selected as authoritative.",
+      "normalized_statuses": [
+        "APPROVED",
+        "AWAITING_SIGNOFF"
+      ],
+      "obligation_ids": [
+        "OBL-009"
+      ],
+      "observation_ids": [
+        "evidence_csv:0013",
+        "servicedesk:0006"
+      ],
+      "review_required": true,
+      "source_datasets": [
+        "evidence_csv",
+        "servicedesk"
+      ],
+      "source_record_ids": [
+        "EV-0013",
+        "SD-89004"
+      ],
+      "titles": [
+        "Group Incident Management Procedure",
+        "Group Incident Management Procedure - annual review"
+      ],
+      "versions": [
+        "3.1"
+      ]
+    },
+    {
+      "assessment_handling": "REVIEW_BEFORE_ASSESSMENT",
+      "digest": "6b1d0e44",
+      "evidence_types": [
+        "compliance_mapping"
+      ],
+      "group_id": "digest:6b1d0e44",
+      "group_type": "METADATA_INCONSISTENCY",
+      "message": "Observations sharing this digest disagree on metadata fields: title. No metadata value was selected as authoritative.",
+      "normalized_statuses": [
+        "APPROVED"
+      ],
+      "obligation_ids": [
+        "OBL-007"
+      ],
+      "observation_ids": [
+        "evidence_csv:0010",
+        "evidence_csv:0025"
+      ],
+      "review_required": true,
+      "source_datasets": [
+        "evidence_csv"
+      ],
+      "source_record_ids": [
+        "EV-0010",
+        "EV-0024"
+      ],
+      "titles": [
+        "Advice process control mapping (DIFC entity)",
+        "Advice process control mapping (onshore entity)"
+      ],
+      "versions": [
+        "2.0"
+      ]
+    },
+    {
+      "assessment_handling": "COUNT_AS_ONE_ARTEFACT",
+      "digest": "7d0e11aa",
+      "evidence_types": [
+        "raci_matrix"
+      ],
+      "group_id": "digest:7d0e11aa",
+      "group_type": "CONSISTENT_DUPLICATE",
+      "message": "Multiple source observations share this digest and agree on important assessment metadata. Treat them as one artefact for assessment without removing their source provenance.",
+      "normalized_statuses": [
+        "APPROVED"
+      ],
+      "obligation_ids": [
+        "OBL-002"
+      ],
+      "observation_ids": [
+        "evidence_csv:0002",
+        "registry:0010"
+      ],
+      "review_required": false,
+      "source_datasets": [
+        "evidence_csv",
+        "registry"
+      ],
+      "source_record_ids": [
+        "AST-010",
+        "EV-0002"
+      ],
+      "titles": [
+        "AI Lifecycle Ownership Matrix"
+      ],
+      "versions": [
+        "1.0"
+      ]
+    },
+    {
+      "assessment_handling": "COUNT_AS_ONE_ARTEFACT",
+      "digest": "aa19c73d",
+      "evidence_types": [
+        "access_control_log"
+      ],
+      "group_id": "digest:aa19c73d",
+      "group_type": "CONSISTENT_DUPLICATE",
+      "message": "Multiple source observations share this digest and agree on important assessment metadata. Treat them as one artefact for assessment without removing their source provenance.",
+      "normalized_statuses": [
+        "APPROVED"
+      ],
+      "obligation_ids": [
+        "OBL-010"
+      ],
+      "observation_ids": [
+        "evidence_csv:0020",
+        "registry:0007"
+      ],
+      "review_required": false,
+      "source_datasets": [
+        "evidence_csv",
+        "registry"
+      ],
+      "source_record_ids": [
+        "AST-007",
+        "EV-0014"
+      ],
+      "titles": [
+        "Production access review, Q1 2026"
+      ],
+      "versions": [
+        "1.0"
+      ]
+    },
+    {
+      "assessment_handling": "COUNT_AS_ONE_ARTEFACT",
+      "digest": "b0937fc5",
+      "evidence_types": [
+        "change_record"
+      ],
+      "group_id": "digest:b0937fc5",
+      "group_type": "CONSISTENT_DUPLICATE",
+      "message": "Multiple source observations share this digest and agree on important assessment metadata. Treat them as one artefact for assessment without removing their source provenance.",
+      "normalized_statuses": [
+        "APPROVED"
+      ],
+      "obligation_ids": [
+        "OBL-011"
+      ],
+      "observation_ids": [
+        "evidence_csv:0016",
+        "servicedesk:0002"
+      ],
+      "review_required": false,
+      "source_datasets": [
+        "evidence_csv",
+        "servicedesk"
+      ],
+      "source_record_ids": [
+        "EV-0016",
+        "SD-91077"
+      ],
+      "titles": [
+        "Change approval: Meridian Chat content update"
+      ],
+      "versions": [
+        "1.0"
+      ]
+    },
+    {
+      "assessment_handling": "COUNT_AS_ONE_ARTEFACT",
+      "digest": "cd8801f4",
+      "evidence_types": [
+        "incident_procedure"
+      ],
+      "group_id": "digest:cd8801f4",
+      "group_type": "CONSISTENT_DUPLICATE",
+      "message": "Multiple source observations share this digest and agree on important assessment metadata. Treat them as one artefact for assessment without removing their source provenance.",
+      "normalized_statuses": [
+        "DRAFT"
+      ],
+      "obligation_ids": [
+        "OBL-009"
+      ],
+      "observation_ids": [
+        "evidence_csv:0022",
+        "servicedesk:0003"
+      ],
+      "review_required": false,
+      "source_datasets": [
+        "evidence_csv",
+        "servicedesk"
+      ],
+      "source_record_ids": [
+        "EV-0021",
+        "SD-90455"
+      ],
+      "titles": [
+        "AI incident annex (draft)"
+      ],
+      "versions": [
+        "0.2"
+      ]
+    },
+    {
+      "assessment_handling": "COUNT_AS_ONE_ARTEFACT",
+      "digest": "d2b7e015",
+      "evidence_types": [
+        "access_control_log"
+      ],
+      "group_id": "digest:d2b7e015",
+      "group_type": "CONSISTENT_DUPLICATE",
+      "message": "Multiple source observations share this digest and agree on important assessment metadata. Treat them as one artefact for assessment without removing their source provenance.",
+      "normalized_statuses": [
+        "APPROVED"
+      ],
+      "obligation_ids": [
+        "OBL-010"
+      ],
+      "observation_ids": [
+        "evidence_csv:0014",
+        "servicedesk:0005"
+      ],
+      "review_required": false,
+      "source_datasets": [
+        "evidence_csv",
+        "servicedesk"
+      ],
+      "source_record_ids": [
+        "EV-0014",
+        "SD-92310"
+      ],
+      "titles": [
+        "Production access review, Q2 2026"
+      ],
+      "versions": [
+        "1.0"
+      ]
+    },
+    {
+      "assessment_handling": "COUNT_AS_ONE_ARTEFACT",
+      "digest": "e71c3a08",
+      "evidence_types": [
+        "change_record"
+      ],
+      "group_id": "digest:e71c3a08",
+      "group_type": "CONSISTENT_DUPLICATE",
+      "message": "Multiple source observations share this digest and agree on important assessment metadata. Treat them as one artefact for assessment without removing their source provenance.",
+      "normalized_statuses": [
+        "APPROVED"
+      ],
+      "obligation_ids": [
+        "OBL-011"
+      ],
+      "observation_ids": [
+        "evidence_csv:0015",
+        "servicedesk:0001"
+      ],
+      "review_required": false,
+      "source_datasets": [
+        "evidence_csv",
+        "servicedesk"
+      ],
+      "source_record_ids": [
+        "EV-0015",
+        "SD-88214"
+      ],
+      "titles": [
+        "Change approval: Lead Score Engine v3 release"
+      ],
+      "versions": [
+        "1.0"
+      ]
+    }
+  ],
+  "schema_version": "1.0.0"
+}
