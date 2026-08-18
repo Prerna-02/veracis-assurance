@@ -1,7 +1,4 @@
-# Veracis Assurance
 # VERACIS Assurance Assessment
-
-**GitHub:** [github.com/Prerna-02/veracis-assurance](https://github.com/Prerna-02/veracis-assurance)
 
 ## What this project does
 
